@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vivora - Speech-to-Text</title>
+<link href="css/speech.css" rel="stylesheet"/>
+<link href="css/vivora-unified-theme.css" rel="stylesheet"/>
+<link href="css/vivora-layout-final.css" rel="stylesheet"/>
+<body>
+<div class="app-container">
+<aside class="sidebar">
+<div class="sidebar-logo">
+<div class="sidebar-logo-icon">♥</div>
+<div>
+<h1>Vivora</h1>
+<p>Smart Health Companion</p>
+</div>
+</div>
+<nav class="sidebar-navigation">
+<a class="nav-item" href="dashboard.html">
+<span class="nav-icon">🏠</span>
+<span>Home</span>
+</a>
+<a class="nav-item" href="medicines.html">
+<span class="nav-icon">💊</span>
+<span>Medicines</span>
+</a>
+<a class="nav-item" href="injections.html">
+<span class="nav-icon">💉</span>
+<span>Injections</span>
+</a>
+<a class="nav-item" href="appointments.html">
+<span class="nav-icon">📅</span>
+<span>Appointments</span>
+</a>
+<a class="nav-item" href="health-records.html">
+<span class="nav-icon">📋</span>
+<span>Health Records</span>
+</a>
+<a class="nav-item active" href="speech.html">
+<span class="nav-icon">🎙️</span>
+<span>Speech-to-Text</span>
+</a>
+<a class="nav-item emergency-nav" href="emergency.html">
+<span class="nav-icon">🚨</span>
+<span>Emergency</span>
+</a>
+<a class="nav-item" href="caregiver.html">
+<span class="nav-icon">👨‍👩‍👧</span>
+<span>Caregiver</span>
+</a>
+</nav>
+<div class="sidebar-bottom">
+<a class="nav-item" href="settings.html">
+<span class="nav-icon">⚙️</span>
+<span>Settings</span>
+</a>
+<a class="nav-item" href="index.html">
+<span class="nav-icon">↪️</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<main class="main-content">
+<header class="top-header"><button class="mobile-menu" type="button">☰</button><div class="header-title"><h2>Speech-to-Text</h2><p>Convert speech into useful health information</p></div><div class="header-actions"><button aria-label="Notifications" class="notification-button" type="button">🔔<span class="notification-badge">3</span></button><button class="profile-button" type="button"><span class="profile-icon">👤</span><span class="profile-name">User</span></button></div></header>
+<div class="speech-container">
+<section class="speech-card">
+<div class="status-row"><span class="status" id="speechStatus">Ready</span></div>
+<div aria-live="polite" class="transcript" id="transcript">Your speech will appear here...</div>
+<div class="speech-actions"><button class="primary-button" id="startSpeech" type="button">🎙️ Start Speaking</button><button class="secondary-button" id="stopSpeech" type="button">⏹ Stop</button><button class="clear-button" id="clearSpeech" type="button">Clear</button><button class="gemini-button" id="askGemini" type="button">✨ Ask Gemini</button></div>
+<p class="message" id="speechMessage"></p>
+<div class="gemini-result-card">
+<h2>Gemini AI Response</h2>
+<div class="gemini-status" id="geminiStatus">Waiting for transcript</div>
+<div class="gemini-response" id="geminiResponse">Your Gemini response will appear here...</div>
+<div class="speech-analysis-details" aria-live="polite">
+  <div class="analysis-item"><h3>Detected intent</h3><p id="intentValue">Not identified</p></div>
+  <div class="analysis-item"><h3>Summary</h3><p id="summaryValue">No analysis yet.</p></div>
+  <div class="analysis-item"><h3>Suggested action</h3><p id="actionValue">No action suggested yet.</p></div>
+  <div class="analysis-item analysis-data"><h3>Extracted information</h3><p id="dataValue">No structured information yet.</p></div>
+</div>
+<div class="confirmation-panel" id="confirmationPanel" hidden>
+  <h3>Review before saving</h3>
+  <p id="confirmationMessage">Review the information above, then confirm or cancel.</p>
+  <div class="confirmation-actions">
+    <button class="primary-button" id="confirmAnalysis" type="button">Confirm and Save</button>
+    <button class="clear-button" id="cancelAnalysis" type="button">Cancel</button>
+  </div>
+</div>
+<p class="save-result" id="saveResult" aria-live="polite"></p>
+<a class="open-module-button" id="openModule" href="dashboard.html" hidden>Open Vivora module</a>
+</div>
+</section>
+<section class="info-card"><h2>How it works</h2><p>Click Start Speaking, allow microphone access, and speak clearly. Your words will appear as text on the screen.</p><p class="note">Speech-to-Text can send the transcript to Gemini AI for understanding and module actions.</p></section>
+</div></main></div>
+<script type="module" src="js/speech.js"></script>
+</body>
+</html>

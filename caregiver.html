@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vivora - Caregiver Notes</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/caregiver.css" rel="stylesheet"/>
+<link href="css/vivora-unified-theme.css" rel="stylesheet"/>
+<link href="css/vivora-layout-final.css" rel="stylesheet"/></head>
+<body>
+<div class="app-container">
+<aside class="sidebar">
+<div class="sidebar-logo">
+<div class="sidebar-logo-icon">♥</div>
+<div>
+<h1>Vivora</h1>
+<p>Smart Health Companion</p>
+</div>
+</div>
+<nav class="sidebar-navigation">
+<a class="nav-item" href="dashboard.html">
+<span class="nav-icon">🏠</span>
+<span>Home</span>
+</a>
+<a class="nav-item" href="medicines.html">
+<span class="nav-icon">💊</span>
+<span>Medicines</span>
+</a>
+<a class="nav-item" href="injections.html">
+<span class="nav-icon">💉</span>
+<span>Injections</span>
+</a>
+<a class="nav-item" href="appointments.html">
+<span class="nav-icon">📅</span>
+<span>Appointments</span>
+</a>
+<a class="nav-item" href="health-records.html">
+<span class="nav-icon">📋</span>
+<span>Health Records</span>
+</a>
+<a class="nav-item" href="speech.html">
+<span class="nav-icon">🎙️</span>
+<span>Speech-to-Text</span>
+</a>
+<a class="nav-item emergency-nav" href="emergency.html">
+<span class="nav-icon">🚨</span>
+<span>Emergency</span>
+</a>
+<a class="nav-item active" href="caregiver.html">
+<span class="nav-icon">👨‍👩‍👧</span>
+<span>Caregiver</span>
+</a>
+</nav>
+<div class="sidebar-bottom">
+<a class="nav-item" href="settings.html">
+<span class="nav-icon">⚙️</span>
+<span>Settings</span>
+</a>
+<a class="nav-item" href="index.html">
+<span class="nav-icon">↪️</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<main class="main-content"><header class="top-header"><button class="mobile-menu" type="button">☰</button><div class="header-title"><h2>Caregiver</h2><p>Keep important care updates and reminders in one place.</p></div><div class="header-actions"><button aria-label="Notifications" class="notification-button" type="button">🔔<span class="notification-badge">3</span></button><button class="profile-button" type="button"><span class="profile-icon">👤</span><span class="profile-name">User</span></button></div></header>
+<div class="caregiver-main">
+
+<div class="page-header">
+<div>
+<h1>Caregiver Notes</h1>
+<p>Keep important care updates and reminders in one place.</p>
+</div>
+<button class="add-note-btn" id="addNoteButton">＋ Add Note</button>
+</div>
+<section class="caregiver-form-card" hidden="" id="noteFormCard">
+<div class="card-title">
+<div class="note-icon">📝</div>
+<div><h2 id="formTitle">Add Caregiver Note</h2><p>Record an important care update or reminder.</p></div>
+</div>
+<form id="caregiverForm">
+<div class="form-row">
+<div class="form-group">
+<label for="noteTitle">Note Title</label>
+<input id="noteTitle" placeholder="Example: Evening care update" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="noteDate">Date</label>
+<input id="noteDate" required="" type="date"/>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="noteCategory">Category</label>
+<select id="noteCategory">
+<option value="General">General</option>
+<option value="Medicine">Medicine</option>
+<option value="Food &amp; Diet">Food &amp; Diet</option>
+<option value="Appointment">Appointment</option>
+<option value="Daily Care">Daily Care</option>
+<option value="Health Update">Health Update</option>
+</select>
+</div>
+<div class="form-group">
+<label for="notePriority">Priority</label>
+<select id="notePriority">
+<option value="Normal">Normal</option>
+<option value="Important">Important</option>
+<option value="High">High</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label for="noteText">Note</label>
+<textarea id="noteText" placeholder="Write the caregiver note..." required="" rows="5"></textarea>
+</div>
+<div class="form-actions">
+<button class="save-note-btn" type="submit">💾 Save Note</button>
+<button class="cancel-note-btn" id="cancelNoteButton" type="button">Cancel</button>
+</div>
+<p id="caregiverMessage"></p>
+</form>
+</section>
+<section class="notes-section">
+<div class="section-heading"><h2>Saved Notes</h2><span id="noteCount">0 notes</span></div>
+<div class="notes-list" id="notesList"></div>
+<div class="empty-notes" id="emptyNotes">📝<h3>No caregiver notes yet</h3><p>Add a note to keep important care information in one place.</p></div>
+</section>
+
+</div>
+</main>
+</div>
+<script src="js/app.js" type="module"></script>
+</body>
+</html>

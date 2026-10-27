@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vivora Data Migration</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f3e8ff;margin:0;padding:40px;color:#241044}.card{max-width:720px;margin:auto;background:white;padding:30px;border-radius:18px;box-shadow:0 8px 30px rgba(0,0,0,.08)}h1{margin-top:0}.uid{font-family:monospace;background:#f5f5f5;padding:10px;border-radius:8px;word-break:break-all}input{width:100%;box-sizing:border-box;padding:12px;margin:7px 0 14px;border:1px solid #ddd;border-radius:9px;font-size:15px}button{border:0;border-radius:10px;padding:12px 18px;background:#7c3aed;color:white;font-size:16px;cursor:pointer;margin-right:8px}button:disabled{opacity:.5;cursor:not-allowed}#status{margin-top:20px;white-space:pre-wrap;line-height:1.6}.warn{background:#fff7ed;padding:14px;border-radius:10px;margin:18px 0}.success{background:#ecfdf5;padding:14px;border-radius:10px;margin-top:18px}.danger{background:#fef2f2;padding:14px;border-radius:10px;margin-top:18px}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>Vivora Data Migration</h1>
+<p>This one-time tool copies your existing Vivora Firestore data from the old Firebase UID to your current Firebase UID.</p>
+<p><strong>Old UID:</strong></p><div class="uid">DHb8kDBzm3TDdSALIVMwFQvkxlj1</div>
+<p><strong>Current UID:</strong></p><div class="uid">GUMa82irSDUB6Y0C3yx0ypqDHSg2</div>
+<div class="warn"><strong>Important:</strong> The temporary Firestore rules must already be published. After migration, restore your normal rules immediately.</div>
+<h3>Sign in to the current Vivora account</h3>
+<label>Email</label>
+<input id="email" type="email" value="hjhj@gmail.com" autocomplete="username">
+<label>Password</label>
+<input id="password" type="password" autocomplete="current-password" placeholder="Enter your Vivora password">
+<button id="loginButton">Sign In</button>
+<button id="migrateButton" disabled>Start Migration</button>
+<div id="status">Please sign in with the current Vivora account.</div>
+</div>
+<script type="module" src="js/migrate.js"></script>
+</body>
+</html>

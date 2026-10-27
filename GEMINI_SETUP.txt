@@ -1,0 +1,39 @@
+VIVORA - GEMINI CONNECTION TEST
+
+Purpose:
+Speech-to-Text -> Gemini AI -> AI response
+
+Files in this patch:
+- server.js: secure backend connection to Gemini
+- package.json: required backend packages
+- .env.example: template for the Gemini API key
+- speech.html: adds the Ask Gemini button and response area
+- js/speech.js: sends the transcript to the backend
+- css/speech.css: styles for the Gemini response area
+
+SETUP
+
+1. Install Node.js LTS if Node.js is not already installed.
+2. Open the RajaCare project folder in VS Code.
+3. Copy the new backend files into the RajaCare root folder.
+4. Open a terminal in the RajaCare root folder.
+5. Run: npm install
+6. Create a file named .env in the same folder as server.js.
+7. Copy the line from .env.example into .env.
+8. Replace the placeholder with your Gemini API key.
+9. Never put the API key inside speech.js, HTML, or any public frontend file.
+10. Run: npm start
+11. Keep the backend terminal running.
+12. Open speech.html using your normal local server.
+13. Speak a sentence.
+14. Stop speaking.
+15. Click Ask Gemini.
+
+Expected result:
+Your transcript is sent to the local backend, the backend calls Gemini,
+and the AI response appears on the Speech-to-Text page.
+
+If the browser says Gemini cannot be reached:
+- make sure npm start is still running
+- check that the terminal says the backend is running on port 3000
+- make sure .env contains a valid Gemini API key

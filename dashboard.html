@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vivora - Dashboard</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="css/dashboard.css" rel="stylesheet"/>
+<link href="css/vivora-unified-theme.css" rel="stylesheet"/>
+<link href="css/vivora-layout-final.css" rel="stylesheet"/></head>
+<body>
+<div class="app-container">
+<aside class="sidebar">
+<div class="sidebar-logo">
+<div class="sidebar-logo-icon">♥</div>
+<div>
+<h1>Vivora</h1>
+<p>Smart Health Companion</p>
+</div>
+</div>
+<nav class="sidebar-navigation">
+<a class="nav-item active" href="dashboard.html">
+<span class="nav-icon">🏠</span>
+<span>Home</span>
+</a>
+<a class="nav-item" href="medicines.html">
+<span class="nav-icon">💊</span>
+<span>Medicines</span>
+</a>
+<a class="nav-item" href="injections.html">
+<span class="nav-icon">💉</span>
+<span>Injections</span>
+</a>
+<a class="nav-item" href="appointments.html">
+<span class="nav-icon">📅</span>
+<span>Appointments</span>
+</a>
+<a class="nav-item" href="health-records.html">
+<span class="nav-icon">📋</span>
+<span>Health Records</span>
+</a>
+<a class="nav-item" href="speech.html">
+<span class="nav-icon">🎙️</span>
+<span>Speech-to-Text</span>
+</a>
+<a class="nav-item emergency-nav" href="emergency.html">
+<span class="nav-icon">🚨</span>
+<span>Emergency</span>
+</a>
+<a class="nav-item" href="caregiver.html">
+<span class="nav-icon">👨‍👩‍👧</span>
+<span>Caregiver</span>
+</a>
+</nav>
+<div class="sidebar-bottom">
+<a class="nav-item" href="settings.html">
+<span class="nav-icon">⚙️</span>
+<span>Settings</span>
+</a>
+<a class="nav-item" href="index.html">
+<span class="nav-icon">↪️</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<main class="main-content">
+<header class="top-header">
+<button class="mobile-menu" type="button">☰</button>
+<div class="header-title"><h2>Dashboard</h2><p>Your health at a glance</p></div>
+<div class="header-actions">
+<button aria-label="Notifications" class="notification-button" type="button">🔔<span class="notification-badge" id="notificationBadge">0</span></button>
+<div class="profile-button"><span class="profile-icon">👤</span><span class="profile-name" id="profileName">User</span></div>
+</div>
+</header>
+<section class="dashboard-content">
+<section class="welcome-section">
+<div><p class="welcome-small" id="welcomeGreeting">Good Morning! 👋</p><h1>Welcome to Vivora</h1><p class="welcome-description">Let's take care of your health today.</p></div>
+<div class="current-date"><span>📅</span><div><p>Today</p><strong id="dashboardDate">Loading...</strong></div></div>
+</section>
+<section class="summary-grid">
+<a class="summary-card" href="medicines.html"><div class="card-icon">💊</div><div class="card-content"><p>Medicines Today</p><h3 id="medicineSummary">Loading...</h3><span id="medicineSubtext">Checking your schedule</span></div><span class="card-arrow">→</span></a>
+<a class="summary-card" href="injections.html"><div class="card-icon">💉</div><div class="card-content"><p>Next Injection</p><h3 id="injectionSummary">Loading...</h3><span id="injectionSubtext">Checking schedule</span></div><span class="card-arrow">→</span></a>
+<a class="summary-card" href="appointments.html"><div class="card-icon">📅</div><div class="card-content"><p>Next Appointment</p><h3 id="appointmentSummary">Loading...</h3><span id="appointmentSubtext">Checking schedule</span></div><span class="card-arrow">→</span></a>
+</section>
+<section class="care-plan-section dashboard-card">
+<div class="section-heading"><div><h2>Today's Care Plan</h2><p>Your scheduled activities</p></div><a class="view-all-button" href="medicines.html">View All</a></div>
+<div class="timeline" id="carePlanList"><div class="loading-state">Loading your care plan...</div></div>
+</section>
+<section class="dashboard-two-column">
+<section class="dashboard-card">
+<div class="section-heading"><div><h2>Important Caregiver Notes</h2><p>Recent notes that need attention</p></div><a class="text-link" href="caregiver.html">View Notes →</a></div>
+<div class="dashboard-notes-list" id="importantNotesList"><div class="loading-state">Loading notes...</div></div>
+</section>
+<section class="dashboard-card">
+<div class="section-heading"><div><h2>Recent Health Record</h2><p>Your latest saved record</p></div><a class="text-link" href="health-records.html">View Records →</a></div>
+<div id="recentRecord"><div class="loading-state">Loading record...</div></div>
+</section>
+</section>
+<section class="quick-access-section dashboard-card">
+<div class="section-heading"><div><h2>Quick Access</h2><p>Frequently used features</p></div></div>
+<div class="quick-access-grid">
+<a class="quick-card" href="speech.html"><span>🎙️</span><strong>Speech-to-Text</strong><small>Convert speech into text</small></a>
+<a class="quick-card" href="health-records.html"><span>📋</span><strong>Health Records</strong><small id="recordCount">Loading...</small></a>
+<a class="quick-card" href="caregiver.html"><span>👨‍👩‍👧</span><strong>Caregiver</strong><small id="caregiverCount">Loading...</small></a>
+</div>
+</section>
+<section class="data-status-grid">
+<a class="data-status-card" href="medicines.html"><span>💊</span><div><strong>Medicines</strong><small id="totalMedicineCount">Loading...</small></div></a>
+<a class="data-status-card" href="injections.html"><span>💉</span><div><strong>Injections</strong><small id="totalInjectionCount">Loading...</small></div></a>
+<a class="data-status-card" href="emergency.html"><span>🚨</span><div><strong>Emergency</strong><small id="emergencyStatus">Loading...</small></div></a>
+</section>
+<section class="emergency-section">
+<div class="emergency-icon">🚨</div>
+<div class="emergency-content" id="emergencyPreview"><div><strong>Loading emergency information...</strong><span>Please wait.</span></div></div>
+</section>
+</section>
+</main>
+</div>
+<script src="js/app.js?v=20260921" type="module"></script>
+<script src="js/dashboard.js?v=20260921" type="module"></script>
+</body>
+</html>

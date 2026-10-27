@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vivora - Settings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="css/vivora-unified-theme.css" rel="stylesheet"><link href="css/vivora-layout-final.css" rel="stylesheet"><link href="css/settings.css" rel="stylesheet">
+</head>
+<body>
+<div class="app-container">
+<aside class="sidebar">
+ <div class="sidebar-logo"><div class="sidebar-logo-icon">♥</div><div><h1>Vivora</h1><p>Smart Health Companion</p></div></div>
+ <nav class="sidebar-navigation">
+  <a class="nav-item" href="dashboard.html"><span class="nav-icon">🏠</span><span>Home</span></a>
+  <a class="nav-item" href="medicines.html"><span class="nav-icon">💊</span><span>Medicines</span></a>
+  <a class="nav-item" href="injections.html"><span class="nav-icon">💉</span><span>Injections</span></a>
+  <a class="nav-item" href="appointments.html"><span class="nav-icon">📅</span><span>Appointments</span></a>
+  <a class="nav-item" href="health-records.html"><span class="nav-icon">📋</span><span>Health Records</span></a>
+  <a class="nav-item" href="speech.html"><span class="nav-icon">🎙️</span><span>Speech-to-Text</span></a>
+  <a class="nav-item emergency-nav" href="emergency.html"><span class="nav-icon">🚨</span><span>Emergency</span></a>
+  <a class="nav-item" href="caregiver.html"><span class="nav-icon">👨‍👩‍👧</span><span>Caregiver</span></a>
+ </nav>
+ <div class="sidebar-bottom"><a class="nav-item active" href="settings.html"><span class="nav-icon">⚙️</span><span>Settings</span></a><a class="nav-item" id="sidebarLogout" href="index.html"><span class="nav-icon">↪️</span><span>Logout</span></a></div>
+</aside>
+<main class="main-content">
+ <header class="top-header"><button class="mobile-menu" type="button" aria-label="Open navigation">☰</button><div class="header-title"><h2>Settings</h2><p>Make Vivora comfortable for you</p></div><div class="header-actions"><div class="profile-button"><span class="profile-icon">👤</span><span class="profile-name" id="headerProfileName">User</span></div></div></header>
+ <section class="settings-content">
+  <div class="settings-intro"><div><p class="intro-small">⚙️ Personalise Vivora</p><h1>Settings</h1><p>Manage your profile, reminders, display and voice preferences in one place.</p></div><div class="settings-intro-icon" aria-hidden="true">💗</div></div>
+  <div class="settings-notice" role="status"><span>ℹ️</span><p>Your preferences are saved on this browser. Profile changes are saved to your signed-in Firebase account where supported.</p></div>
+  <section class="settings-card" id="profileSection"><div class="settings-card-heading"><span class="settings-icon">👤</span><div><h2>Profile Settings</h2><p>Update the name shown in your Vivora dashboard.</p></div></div>
+   <form id="profileForm" class="settings-form"><div class="field-group"><label for="displayName">Your name</label><input id="displayName" name="displayName" type="text" maxlength="60" placeholder="Enter your name" autocomplete="name"><small>This name is used to personalise the app.</small></div><div class="field-group"><label for="accountEmail">Email address</label><input id="accountEmail" type="email" readonly><small>Email is shown from your signed-in account.</small></div><div class="settings-actions"><button class="primary-button" type="submit">Save Profile</button><span class="inline-message" id="profileMessage" role="status"></span></div></form>
+  </section>
+  <section class="settings-card"><div class="settings-card-heading"><span class="settings-icon">🔔</span><div><h2>Reminder Settings</h2><p>Choose which reminder categories you want enabled.</p></div></div>
+   <div class="settings-options"><label class="setting-row"><span><strong>Medicine reminders</strong><small>Reminders for scheduled medicine doses.</small></span><input class="switch-input" type="checkbox" id="medicineReminders"><span class="switch-ui" aria-hidden="true"></span></label><label class="setting-row"><span><strong>Injection reminders</strong><small>Reminders for upcoming injections.</small></span><input class="switch-input" type="checkbox" id="injectionReminders"><span class="switch-ui" aria-hidden="true"></span></label><label class="setting-row"><span><strong>Appointment reminders</strong><small>Reminders for doctor visits.</small></span><input class="switch-input" type="checkbox" id="appointmentReminders"><span class="switch-ui" aria-hidden="true"></span></label></div>
+  </section>
+  <section class="settings-card"><div class="settings-card-heading"><span class="settings-icon">🔎</span><div><h2>Accessibility</h2><p>Choose a text size that is easy for you to read.</p></div></div>
+   <div class="field-group"><label for="textSize">Text size</label><select id="textSize"><option value="normal">Normal text</option><option value="large">Large text</option><option value="extra-large">Extra-large text</option></select><small>The selected size is applied to this page and other Vivora pages that load the saved preference.</small></div><div class="text-preview" id="textPreview">Your health matters. Vivora helps you keep your care information organised.</div>
+  </section>
+  <section class="settings-card"><div class="settings-card-heading"><span class="settings-icon">🎨</span><div><h2>Appearance</h2><p>Keep the calm, easy-to-read Vivora look.</p></div></div>
+   <div class="appearance-choice"><span class="theme-swatch" aria-hidden="true"></span><div><strong>Blush Care theme</strong><small>Soft rose colours, clear cards and readable text.</small></div><span class="selected-pill">Currently active</span></div>
+  </section>
+  <section class="settings-card"><div class="settings-card-heading"><span class="settings-icon">🎙️</span><div><h2>Voice Assistant</h2><p>Set your preference for the speech-to-text feature.</p></div></div>
+   <div class="settings-options"><label class="setting-row"><span><strong>Enable voice features</strong><small>Allow speech-related tools to be used when supported by your browser.</small></span><input class="switch-input" type="checkbox" id="voiceEnabled"><span class="switch-ui" aria-hidden="true"></span></label></div>
+   <div class="field-group voice-language"><label for="speechLanguage">Preferred recognition language</label><select id="speechLanguage"><option value="en-IN">English (India)</option><option value="ta-IN">Tamil (India)</option><option value="en-US">English (United States)</option><option value="hi-IN">Hindi (India)</option></select><small>This saves your preference; the speech page must read this setting to apply it to recognition.</small></div>
+  </section>
+  <section class="settings-card account-card"><div class="settings-card-heading"><span class="settings-icon">🔐</span><div><h2>Account Settings</h2><p>Check your current sign-in status or sign out safely.</p></div></div><div class="account-status"><span class="status-dot"></span><div><strong id="accountStatus">Checking account...</strong><small id="accountDetails">Please wait while your account is checked.</small></div></div><button class="danger-button" id="signOutButton" type="button">Sign Out</button><p class="inline-message" id="signOutMessage" role="status"></p></section>
+  <div class="settings-footer"><span>♥</span> Made for more comfortable everyday care.</div>
+ </section>
+</main>
+</div>
+<script type="module" src="js/settings.js"></script>
+<script type="module" src="js/app.js"></script>
+</body></html>

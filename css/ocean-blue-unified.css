@@ -1,0 +1,110 @@
+/* VIVORA - OCEAN BLUE CALM UNIFIED LIGHT THEME */
+:root{
+  --blue-950:#07304A;
+  --blue-900:#084B70;
+  --blue-800:#075985;
+  --blue-700:#0A6FA8;
+  --blue-600:#1583BD;
+  --blue-500:#2D91C8;
+  --blue-300:#9CCEEA;
+  --blue-200:#C7E4F3;
+  --blue-100:#E2F1F9;
+  --blue-50:#F1F8FC;
+  --white:#FFFFFF;
+  --text:#12344A;
+  --muted:#5D7890;
+  --border:#C9E1EE;
+  --shadow:0 6px 20px rgba(8,75,112,.08);
+  --shadow-hover:0 10px 28px rgba(8,75,112,.13);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins','Roboto',sans-serif!important;background:var(--blue-50)!important;color:var(--text)!important}
+a{text-decoration:none!important;color:inherit}
+button{font-family:inherit}
+/* ---------- Common application shell ---------- */
+.app-container{min-height:100vh;background:var(--blue-50)}
+.sidebar{width:260px!important;background:#F7FBFE!important;border-right:1px solid var(--border)!important;box-shadow:4px 0 18px rgba(8,75,112,.05);padding:22px 15px!important;z-index:20}
+.sidebar-logo,.logo{display:flex;align-items:center;gap:12px;padding:7px 10px 22px!important;border-bottom:1px solid var(--blue-200)!important;margin-bottom:12px}
+.sidebar-logo-icon,.logo-icon{background:var(--blue-100)!important;color:var(--blue-800)!important;border-radius:14px!important}
+.sidebar-logo h1,.logo h1,.logo h2{color:var(--blue-950)!important;font-family:'Poppins',sans-serif!important}
+.sidebar-logo p,.logo p{color:var(--muted)!important}
+.sidebar-navigation{gap:4px!important;padding-top:6px!important}
+.sidebar-bottom{border-top:1px solid var(--blue-200)!important;padding-top:14px!important}
+.nav-item{color:var(--blue-900)!important;border-radius:11px!important;padding:12px 13px!important;font-size:14px!important;font-weight:500!important}
+.nav-item:hover{background:var(--blue-100)!important;color:var(--blue-800)!important}
+.nav-item.active{background:var(--blue-800)!important;color:#fff!important;box-shadow:0 5px 14px rgba(8,75,112,.16)}
+.nav-icon{color:inherit!important}
+.emergency-nav,.emergency-nav:hover{color:var(--blue-800)!important;background:transparent!important}
+.main-content{margin-left:260px!important;width:calc(100% - 260px)!important;min-height:100vh;background:var(--blue-50)}
+.top-header{height:80px!important;background:#fff!important;border-bottom:1px solid var(--border)!important;padding:0 32px!important;box-shadow:0 2px 10px rgba(8,75,112,.04)}
+.header-title h2{color:var(--blue-950)!important;font-size:22px!important}
+.header-title p{color:var(--muted)!important}
+.header-actions{gap:14px!important}
+.notification-button,.mobile-menu{background:var(--blue-100)!important;color:var(--blue-800)!important}
+.notification-badge{background:var(--blue-800)!important}
+.profile-button{color:var(--blue-900)!important}
+.profile-icon{background:var(--blue-100)!important;color:var(--blue-800)!important}
+/* ---------- Common page width / layout ---------- */
+.medicines-content,.injections-content,.dashboard-content{max-width:1280px!important;margin:0 auto!important;padding:30px 34px 48px!important}
+.page-intro,.appointment-header,.records-header,.page-header{max-width:1280px}
+.page-intro,.appointment-header,.records-header,.caregiver-main>.page-header,.emergency-main>.page-header{display:flex;align-items:center;justify-content:space-between;gap:24px;margin:0 auto 24px!important;padding:30px 34px 0!important}
+.page-intro h1,.appointment-header h1,.records-header h1,.page-header h1{font-family:'Poppins',sans-serif!important;color:var(--blue-950)!important;font-size:29px!important;margin:0 0 5px!important}
+.page-intro p,.appointment-header p,.records-header p,.page-header p{color:var(--muted)!important}
+.intro-small,.welcome-small{color:var(--blue-700)!important}
+.add-medicine-button,.add-injection-button,.add-appointment-btn,.add-record-btn,.add-note-btn,.save-emergency-btn,.empty-add-btn{background:var(--blue-800)!important;color:#fff!important;border:0!important;border-radius:10px!important;box-shadow:0 5px 14px rgba(8,75,112,.14)}
+.add-medicine-button:hover,.add-injection-button:hover,.add-appointment-btn:hover,.add-record-btn:hover,.add-note-btn:hover,.save-emergency-btn:hover,.empty-add-btn:hover{background:var(--blue-900)!important}
+/* ---------- Cards ---------- */
+.medicine-section,.injection-section,.next-visit-section,.preparation-section,.timeline-section,.records-section,.record-summary,.record-categories,.caregiver-form-card,.notes-section,.emergency-layout>*,.dashboard-card{border-radius:16px!important}
+.medicine-section,.injection-section,.next-visit-card,.preparation-card,.timeline-item,.record-summary .summary-card,.records-section,.caregiver-form-card,.notes-section,.emergency-card,.emergency-summary-card,.dashboard-card,.summary-card{background:#fff!important;border:1px solid var(--border)!important;box-shadow:var(--shadow)!important}
+.section-heading h2,.section-title h2,.card-title h2,.emergency-card-title h2{color:var(--blue-950)!important}
+.section-heading p,.section-title p,.card-title p{color:var(--muted)!important}
+/* Medicines / injections use same two-column content rhythm */
+.medicine-section,.injection-section{margin-bottom:22px!important}
+.medicine-list,.injection-list,.all-medicine-list,.all-injection-list{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px!important}
+.medicine-card,.injection-card{background:#fff!important;border:1px solid var(--blue-200)!important;border-radius:14px!important;box-shadow:0 4px 14px rgba(8,75,112,.06)!important}
+.card-icon,.injection-icon,.summary-icon,.note-icon,.record-icon{background:var(--blue-100)!important;color:var(--blue-800)!important}
+.card-arrow,.view-all-button,.text-link,.view-all,.edit-btn{color:var(--blue-700)!important}
+/* Statuses: blue only */
+.status,.completed-status,.upcoming-status,.pending-status,.taken-status,.medicine-status,.visit-countdown{background:var(--blue-100)!important;color:var(--blue-800)!important;border:0!important}
+.delete-appointment-btn,.delete-btn,.danger-btn{background:var(--blue-100)!important;color:var(--blue-900)!important}
+/* ---------- Dashboard layout ---------- */
+.dashboard-content{padding-top:28px!important}
+.welcome-section{background:linear-gradient(110deg,var(--blue-100),#EAF6FC)!important;border:1px solid var(--blue-200);border-radius:16px;padding:24px 25px;margin-bottom:20px!important}
+.welcome-section h1{color:var(--blue-950)!important;font-size:28px!important}
+.welcome-description{color:var(--muted)!important}
+.current-date{background:#fff!important;border:1px solid var(--blue-200)!important;box-shadow:none!important}
+.current-date p{color:var(--muted)!important}.current-date strong{color:var(--blue-950)!important}
+.summary-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;margin-bottom:20px!important}
+.summary-card{min-height:112px!important;padding:18px!important}
+.summary-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)!important}
+.card-content p,.card-content span{color:var(--muted)!important}.card-content h3{color:var(--blue-950)!important}
+.dashboard-card{padding:22px!important;margin-bottom:20px}
+.timeline-item{background:var(--blue-50)!important;border:1px solid var(--blue-200)!important;border-radius:14px;padding:15px!important;margin-bottom:12px}
+.timeline-item:not(:last-child)::after{background:var(--blue-300)!important}
+.timeline-dot{background:var(--blue-100)!important;color:var(--blue-800)!important}.timeline-item.completed .timeline-dot{background:var(--blue-200)!important;color:var(--blue-900)!important}
+.timeline-content h3{color:var(--blue-950)!important}.timeline-content p{color:var(--muted)!important}
+.dashboard-two-column{gap:18px!important}
+.dashboard-note,.record-preview{background:var(--blue-50)!important;border:1px solid var(--blue-200)!important}
+.quick-card,.data-status-card{background:#fff!important;border:1px solid var(--blue-200)!important}
+.quick-card:hover{background:var(--blue-50)!important;border-color:var(--blue-300)!important}
+.emergency-section{background:var(--blue-100)!important;border:1px solid var(--blue-200)!important}.emergency-icon{background:var(--blue-200)!important}.emergency-content strong,.emergency-content span{color:var(--blue-900)!important}.emergency-button{background:var(--blue-800)!important;color:#fff!important}
+/* ---------- Appointments ---------- */
+.main-content>.appointment-header,.main-content>.next-visit-section,.main-content>.preparation-section,.main-content>.timeline-section{width:min(1280px,calc(100% - 68px))}
+.next-visit-card{padding:22px!important}.visit-date-box{background:var(--blue-800)!important}.appointment-timeline::before{background:var(--blue-300)!important}.timeline-item::before{background:var(--blue-700)!important;border-color:#fff!important;box-shadow:0 0 0 2px var(--blue-200)!important}.timeline-date{color:var(--blue-700)!important}.preparation-card label{background:var(--blue-50)!important}
+/* ---------- Health records ---------- */
+.main-content>.records-header,.main-content>.record-summary,.main-content>.record-categories,.main-content>.records-section{width:min(1280px,calc(100% - 68px))}
+.record-summary{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px!important;margin:0 auto 20px!important}.record-summary .summary-card{margin:0!important;padding:18px!important}.category-btn{background:#fff!important;color:var(--blue-800)!important;border:1px solid var(--blue-200)!important}.category-btn.active{background:var(--blue-800)!important;color:#fff!important;border-color:var(--blue-800)!important}.empty-records{background:var(--blue-50)!important;border:1px dashed var(--blue-300)!important}.empty-records-icon{color:var(--blue-700)!important}
+/* ---------- Emergency ---------- */
+.main-content.emergency-main>.emergency-layout{width:min(1280px,calc(100% - 68px));margin:0 auto!important;display:grid;grid-template-columns:minmax(0,1.7fr) minmax(300px,.8fr);gap:20px;padding:0!important}.emergency-card,.emergency-summary-card{padding:22px!important}.section-heading{color:var(--blue-950)!important}.form-group label{color:var(--blue-900)!important}.form-group input,.form-group select,.form-group textarea{border:1px solid var(--blue-200)!important;background:#fff!important;color:var(--text)!important;border-radius:9px!important}.large-emergency-icon{background:var(--blue-100)!important;color:var(--blue-800)!important;border-radius:14px!important}
+/* ---------- Caregiver ---------- */
+.main-content.caregiver-main>.page-header,.main-content.caregiver-main>.caregiver-form-card,.main-content.caregiver-main>.notes-section{width:min(1280px,calc(100% - 68px));margin-left:auto!important;margin-right:auto!important}.caregiver-form-card,.notes-section{padding:22px!important}.notes-list{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px!important}.note-card{background:#fff!important;border:1px solid var(--blue-200)!important;border-radius:14px!important}.note-priority-badge,.note-priority-badge.normal,.note-priority-badge.important,.note-priority-badge.high{background:var(--blue-100)!important;color:var(--blue-800)!important}
+/* ---------- Speech ---------- */
+.speech-page{background:var(--blue-50)!important;color:var(--text)!important}.speech-header{background:#fff!important;border-bottom:1px solid var(--border)!important}.speech-card,.info-card,.gemini-result-card{background:#fff!important;border:1px solid var(--blue-200)!important;box-shadow:var(--shadow)!important}.primary-button,.gemini-button{background:var(--blue-800)!important;color:#fff!important}.secondary-button,.clear-button{background:var(--blue-100)!important;color:var(--blue-900)!important;border:1px solid var(--blue-200)!important}.status{color:var(--blue-800)!important}
+/* ---------- Login / Get Started ---------- */
+.welcome-page{background:linear-gradient(135deg,#EAF5FB,#F6FBFE)!important}.logo-icon{background:var(--blue-100)!important;color:var(--blue-800)!important}.logo h1{color:var(--blue-900)!important}.welcome-content{border:1px solid var(--blue-200)!important;box-shadow:var(--shadow)!important}.welcome-content h2{color:var(--blue-950)!important}.welcome-content p,footer p{color:var(--muted)!important}.start-button{background:var(--blue-800)!important}.start-button:hover{background:var(--blue-900)!important;box-shadow:0 6px 15px rgba(8,75,112,.18)!important}
+/* Remove non-blue accents globally from common UI */
+[style*="#7C3AED"],[style*="#9b87d4"],[style*="#22c55e"],[style*="#16a34a"],[style*="#dc2626"]{color:var(--blue-800)!important;background-color:var(--blue-100)!important}
+/* ---------- Responsive ---------- */
+@media(max-width:1050px){.sidebar{width:225px!important}.main-content{margin-left:225px!important;width:calc(100% - 225px)!important}.summary-grid{grid-template-columns:1fr!important}.record-summary{grid-template-columns:repeat(2,minmax(0,1fr))!important}.main-content.emergency-main>.emergency-layout{grid-template-columns:1fr!important}.medicine-list,.injection-list,.all-medicine-list,.all-injection-list,.notes-list{grid-template-columns:1fr!important}}
+@media(max-width:760px){.sidebar{display:none!important}.main-content{margin-left:0!important;width:100%!important}.top-header{padding:0 18px!important}.dashboard-content,.medicines-content,.injections-content{padding:20px 17px 35px!important}.main-content>.appointment-header,.main-content>.next-visit-section,.main-content>.preparation-section,.main-content>.timeline-section,.main-content>.records-header,.main-content>.record-summary,.main-content>.record-categories,.main-content>.records-section,.main-content.emergency-main>.emergency-layout,.main-content.caregiver-main>.page-header,.main-content.caregiver-main>.caregiver-form-card,.main-content.caregiver-main>.notes-section{width:calc(100% - 34px)!important}.page-intro,.appointment-header,.records-header,.caregiver-main>.page-header,.emergency-main>.page-header{padding-top:22px!important;align-items:flex-start;flex-direction:column}.record-summary{grid-template-columns:1fr!important}.welcome-section{padding:20px;align-items:flex-start!important}.current-date{width:100%}.dashboard-two-column{grid-template-columns:1fr!important}}

@@ -1,0 +1,524 @@
+/* ==================== INJECTIONS PAGE ==================== */
+
+.injections-content {
+    background: #eadcff;
+    min-height: calc(100vh - 85px);
+    padding: 45px 68px;
+}
+
+/* ==================== PAGE INTRO ==================== */
+
+.injections-content .page-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 45px;
+}
+
+.injections-content .intro-small {
+    color: #7c3aed;
+    font-size: 21px;
+    font-weight: 600;
+    margin: 0 0 12px;
+}
+
+.injections-content .page-intro h1 {
+    color: #151b4b;
+    font-size: 38px;
+    margin: 0 0 10px;
+    font-weight: 700;
+}
+
+.injections-content .page-intro > div > p:last-child {
+    color: #64748b;
+    font-size: 20px;
+    margin: 0;
+}
+
+/* ==================== ADD INJECTION BUTTON ==================== */
+
+.add-injection-button {
+    background: #7c3aed;
+    color: white;
+    border: none;
+    padding: 17px 28px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.add-injection-button:hover {
+    background: #6d28d9;
+    transform: translateY(-2px);
+}
+
+/* ==================== INJECTION SECTION ==================== */
+
+.injection-section {
+    margin-bottom: 38px;
+}
+
+.injection-section .section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.injection-section .section-heading h2 {
+    color: #151b4b;
+    font-size: 28px;
+    margin: 0 0 6px;
+}
+
+.injection-section .section-heading p {
+    color: #64748b;
+    font-size: 18px;
+    margin: 0;
+}
+
+.injection-count {
+    color: #7c3aed;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* ==================== INJECTION LIST ==================== */
+
+.injection-list,
+.all-injection-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* ==================== INJECTION CARD ==================== */
+
+.injection-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 5px 18px rgba(85, 65, 130, 0.08);
+}
+
+/* ==================== INJECTION IMAGE ==================== */
+
+.injection-image-container {
+    width: 190px;
+    height: 150px;
+    background: #f0e7ff;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.injection-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.injection-image-container div {
+    font-size: 65px;
+}
+
+/* ==================== INJECTION INFORMATION ==================== */
+
+.injection-info {
+    flex: 1;
+}
+
+.injection-info h3 {
+    color: #151b4b;
+    font-size: 27px;
+    margin: 0 0 5px;
+}
+
+.injection-dose {
+    color: #64748b;
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.injection-detail {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #475569;
+    font-size: 17px;
+    margin: 8px 0;
+}
+
+.injection-detail strong {
+    color: #151b4b;
+}
+
+/* ==================== STATUS ==================== */
+
+.injection-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.injection-status.upcoming {
+    background: #fff4cc;
+    color: #a16207;
+}
+
+.injection-status.completed {
+    background: #d8f8e5;
+    color: #15803d;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+/* ==================== ACTION BUTTONS ==================== */
+
+.injection-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.injection-edit-btn,
+.injection-delete-btn {
+    border: none;
+    padding: 11px 17px;
+    border-radius: 11px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.injection-edit-btn {
+    background: #eee5ff;
+    color: #7c3aed;
+}
+
+.injection-delete-btn {
+    background: #ffe0e0;
+    color: #dc2626;
+}
+
+.injection-edit-btn:hover,
+.injection-delete-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* ==================== EMPTY MESSAGE ==================== */
+
+.empty-injection {
+    background: white;
+    border-radius: 20px;
+    padding: 50px 30px;
+    text-align: center;
+    color: #64748b;
+}
+
+.empty-injection div {
+    font-size: 55px;
+}
+
+.empty-injection h3 {
+    color: #151b4b;
+    font-size: 22px;
+    margin: 12px 0 8px;
+}
+
+.empty-injection p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* ==================== MODAL ==================== */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background: rgba(35, 27, 60, 0.5);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.injection-modal {
+    width: 650px;
+    max-width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* ==================== MODAL HEADER ==================== */
+
+.injection-modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.injection-modal .modal-header h2 {
+    color: #151b4b;
+    font-size: 27px;
+    margin: 0 0 5px;
+}
+
+.injection-modal .modal-header p {
+    color: #64748b;
+    font-size: 15px;
+    margin: 0;
+}
+
+.close-modal {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: #f1edff;
+    color: #7c3aed;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ==================== PHOTO UPLOAD ==================== */
+
+.photo-upload-section {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.photo-preview {
+    width: 150px;
+    height: 120px;
+    margin: 0 auto 15px;
+    background: #f0e7ff;
+    border: 2px dashed #c4b5fd;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #7c3aed;
+}
+
+.photo-preview span {
+    font-size: 35px;
+}
+
+.photo-preview p {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+.upload-button {
+    display: inline-block;
+    background: #eee5ff;
+    color: #7c3aed;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.photo-upload-section small {
+    display: block;
+    color: #64748b;
+    margin-top: 8px;
+}
+
+/* ==================== FORM ==================== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    color: #151b4b;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 15px;
+    border: 1px solid #d8d1e8;
+    border-radius: 11px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #7c3aed;
+}
+
+.form-group textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+/* ==================== MODAL ACTIONS ==================== */
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.cancel-button,
+.save-injection-button {
+    border: none;
+    padding: 13px 21px;
+    border-radius: 11px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background: #eee9f7;
+    color: #475569;
+}
+
+.save-injection-button {
+    background: #7c3aed;
+    color: white;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 900px) {
+    .injections-content {
+        padding: 30px;
+    }
+
+    .injections-content .page-intro {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .injection-card {
+        flex-wrap: wrap;
+    }
+
+    .injection-actions {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .injections-content {
+        padding: 22px 15px;
+    }
+
+    .injections-content .page-intro h1 {
+        font-size: 30px;
+    }
+
+    .injections-content .page-intro > div > p:last-child {
+        font-size: 17px;
+    }
+
+    .add-injection-button {
+        width: 100%;
+    }
+
+    .injection-section .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .injection-card {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .injection-image-container {
+        width: 100%;
+        height: 180px;
+    }
+
+    .injection-info {
+        width: 100%;
+    }
+
+    .injection-info h3 {
+        font-size: 24px;
+    }
+
+    .injection-actions {
+        width: 100%;
+    }
+
+    .injection-edit-btn,
+    .injection-delete-btn {
+        flex: 1;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .injection-modal {
+        padding: 22px;
+    }
+}
+/* Upcoming Injection Due Text */
+.injection-due {
+    display: inline-block;
+    margin: 8px 0 12px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #e8f7f1;
+    color: #16805c;
+    font-size: 15px;
+    font-weight: 600;
+}

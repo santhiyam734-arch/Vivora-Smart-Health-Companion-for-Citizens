@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vivora - Appointments</title>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/appointments.css" rel="stylesheet"/>
+<link href="css/vivora-unified-theme.css" rel="stylesheet"/>
+<link href="css/vivora-layout-final.css" rel="stylesheet"/></head>
+<body>
+<div class="app-container">
+<!-- SIDEBAR -->
+<aside class="sidebar">
+<div class="sidebar-logo">
+<div class="sidebar-logo-icon">♥</div>
+<div>
+<h1>Vivora</h1>
+<p>Smart Health Companion</p>
+</div>
+</div>
+<nav class="sidebar-navigation">
+<a class="nav-item" href="dashboard.html">
+<span class="nav-icon">🏠</span>
+<span>Home</span>
+</a>
+<a class="nav-item" href="medicines.html">
+<span class="nav-icon">💊</span>
+<span>Medicines</span>
+</a>
+<a class="nav-item" href="injections.html">
+<span class="nav-icon">💉</span>
+<span>Injections</span>
+</a>
+<a class="nav-item active" href="appointments.html">
+<span class="nav-icon">📅</span>
+<span>Appointments</span>
+</a>
+<a class="nav-item" href="health-records.html">
+<span class="nav-icon">📋</span>
+<span>Health Records</span>
+</a>
+<a class="nav-item" href="speech.html">
+<span class="nav-icon">🎙️</span>
+<span>Speech-to-Text</span>
+</a>
+<a class="nav-item emergency-nav" href="emergency.html">
+<span class="nav-icon">🚨</span>
+<span>Emergency</span>
+</a>
+<a class="nav-item" href="caregiver.html">
+<span class="nav-icon">👨‍👩‍👧</span>
+<span>Caregiver</span>
+</a>
+</nav>
+<div class="sidebar-bottom">
+<a class="nav-item" href="settings.html">
+<span class="nav-icon">⚙️</span>
+<span>Settings</span>
+</a>
+<a class="nav-item" href="index.html">
+<span class="nav-icon">↪️</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- MAIN CONTENT -->
+<main class="main-content"><header class="top-header"><button class="mobile-menu" type="button">☰</button><div class="header-title"><h2>Appointments</h2><p>Plan and prepare for your doctor visits</p></div><div class="header-actions"><button aria-label="Notifications" class="notification-button" type="button">🔔<span class="notification-badge">3</span></button><button class="profile-button" type="button"><span class="profile-icon">👤</span><span class="profile-name">User</span></button></div></header>
+<!-- PAGE INTRO -->
+<div class="appointment-page-intro">
+<div>
+<p class="intro-small">📅 My Appointments</p>
+<h1>Appointment Schedule</h1>
+<p>Plan and prepare for your doctor visits.</p>
+</div>
+<button class="add-appointment-btn" id="openAppointmentForm">+ Add Appointment</button>
+</div>
+<!-- NEXT VISIT -->
+<section class="next-visit-section">
+<div class="section-title">
+<div>
+<h2>⭐ My Next Visit</h2>
+<p>Your nearest upcoming appointment</p>
+</div>
+</div>
+<div id="nextVisit"></div>
+</section>
+<!-- PREPARATION -->
+<section class="preparation-section">
+<div class="section-title">
+<div>
+<h2>🩺 Prepare for Your Visit</h2>
+<p>Things to remember before leaving</p>
+</div>
+</div>
+<div class="preparation-card">
+<label>
+<input class="preparation-check" type="checkbox"/>
+<span>Medical records</span>
+</label>
+<label>
+<input class="preparation-check" type="checkbox"/>
+<span>Current medicines</span>
+</label>
+<label>
+<input class="preparation-check" type="checkbox"/>
+<span>Previous prescriptions</span>
+</label>
+<label>
+<input class="preparation-check" type="checkbox"/>
+<span>Recent health reports</span>
+</label>
+<label>
+<input class="preparation-check" type="checkbox"/>
+<span>Questions to ask the doctor</span>
+</label>
+</div>
+</section>
+<!-- TIMELINE -->
+<section class="timeline-section">
+<div class="section-title">
+<div>
+<h2>🗓️ Appointment Timeline</h2>
+<p>Your doctor visits</p>
+</div>
+</div>
+<div class="appointment-timeline" id="appointmentTimeline"></div>
+</section>
+</main>
+</div>
+<!-- ADD / EDIT APPOINTMENT MODAL -->
+<div class="appointment-modal" id="appointmentModal">
+<div class="appointment-modal-content">
+<div class="appointment-modal-header">
+<h2 id="appointmentModalTitle">Add New Appointment</h2>
+<button class="close-btn" id="closeAppointmentForm" type="button">
+                ×
+            </button>
+</div>
+<form id="appointmentForm">
+<div class="form-group">
+<label>Doctor Name</label>
+<input id="appointmentDoctor" placeholder="Enter doctor name" required="" type="text"/>
+</div>
+<div class="form-group">
+<label>Hospital / Clinic</label>
+<input id="appointmentHospital" placeholder="Enter hospital or clinic" required="" type="text"/>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Appointment Date</label>
+<input id="appointmentDate" required="" type="date"/>
+</div>
+<div class="form-group">
+<label>Appointment Time</label>
+<input id="appointmentTime" required="" type="time"/>
+</div>
+</div>
+<div class="form-group">
+<label>Visit Type</label>
+<select id="appointmentType" required="">
+<option value="">Select visit type</option>
+<option value="General Check-up">General Check-up</option>
+<option value="Follow-up">Follow-up</option>
+<option value="Specialist Visit">Specialist Visit</option>
+<option value="Test / Scan">Test / Scan</option>
+<option value="Vaccination">Vaccination</option>
+<option value="Other">Other</option>
+</select>
+</div>
+<div class="form-group">
+<label>Hospital Location</label>
+<input id="appointmentLocation" placeholder="Example: Chennai" type="text"/>
+</div>
+<div class="form-group">
+<label>Notes</label>
+<textarea id="appointmentNotes" placeholder="Anything to remember about this visit..." rows="4"></textarea>
+</div>
+<div class="modal-actions">
+<button class="cancel-btn" id="cancelAppointmentForm" type="button">
+                    Cancel
+                </button>
+<button class="save-appointment-btn" type="submit">
+                    Save Appointment
+                </button>
+</div>
+</form>
+</div>
+</div>
+<script src="js/app.js?v=20260920" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+/* VIVORA - DARK OCEAN BLUE CALM DESIGN SYSTEM */
+:root{
+  --ocean-primary:#075985;
+  --ocean-primary-dark:#043B5C;
+  --ocean-secondary:#0E7490;
+  --ocean-accent:#0891B2;
+  --ocean-light:#D8EEF7;
+  --ocean-pale:#EAF6FB;
+  --ocean-bg:#F3F9FC;
+  --ocean-card:#FFFFFF;
+  --ocean-text:#12344A;
+  --ocean-muted:#60798A;
+  --ocean-border:#C9E0EA;
+  --ocean-success:#16866A;
+  --ocean-warning:#B7791F;
+  --ocean-danger:#C94B4B;
+  --ocean-shadow:0 8px 24px rgba(4,59,92,.10);
+  --ocean-radius:16px;
+  --ocean-sidebar:260px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Poppins,Roboto,Arial,sans-serif!important;color:var(--ocean-text)!important;background:var(--ocean-bg)!important}
+body{font-size:15px}
+/* Shared shell */
+.sidebar{width:var(--ocean-sidebar)!important;min-height:100vh!important;background:#fff!important;border-right:1px solid var(--ocean-border)!important;box-shadow:3px 0 18px rgba(4,59,92,.06)!important;padding:24px 16px!important;position:fixed!important;left:0!important;top:0!important;bottom:0!important;z-index:100!important}
+.sidebar-logo{padding:4px 10px 22px!important;border-bottom:1px solid #DCEBF1!important}
+.sidebar-logo-icon{width:43px!important;height:43px!important;border-radius:12px!important;background:var(--ocean-light)!important;color:var(--ocean-primary-dark)!important}
+.sidebar-logo h1,.sidebar-logo h1 a{color:var(--ocean-primary-dark)!important;font-weight:700!important}
+.sidebar-logo p{color:var(--ocean-muted)!important}
+.sidebar-navigation,.sidebar-bottom{gap:6px!important}
+.sidebar-navigation .nav-item,.sidebar .nav-item{min-height:44px!important;display:flex!important;align-items:center!important;gap:11px!important;padding:11px 13px!important;border-radius:11px!important;color:#35566A!important;text-decoration:none!important}
+.sidebar-navigation .nav-item:hover,.sidebar .nav-item:hover{background:var(--ocean-pale)!important;color:var(--ocean-primary-dark)!important}
+.sidebar-navigation .nav-item.active,.sidebar .nav-item.active,.sidebar .active{background:var(--ocean-primary)!important;color:#fff!important;font-weight:600!important;box-shadow:0 5px 12px rgba(7,89,133,.18)!important}
+.sidebar-navigation .nav-item.active .nav-icon,.sidebar .nav-item.active .nav-icon{color:#fff!important}
+.main-content{margin-left:var(--ocean-sidebar)!important;width:calc(100% - var(--ocean-sidebar))!important;min-height:100vh!important;background:var(--ocean-bg)!important}
+.top-header{height:80px!important;padding:0 32px!important;background:#fff!important;border-bottom:1px solid var(--ocean-border)!important}
+.header-title h2,.page-intro h1,.appointment-header h1,.records-header h1,.page-header h1,.dashboard-title,.section-heading,.section-title{color:var(--ocean-text)!important}
+.header-title p,.page-intro p,.appointment-header p,.records-header p,.page-header p,.intro-small{color:var(--ocean-muted)!important}
+/* Common content geometry */
+.medicines-content,.injections-content,.appointments-content,.health-records-content,.emergency-main,.caregiver-main,.dashboard-content{max-width:1450px!important;margin:0 auto!important;padding:30px 32px 45px!important;background:var(--ocean-bg)!important}
+.medicines-content,.injections-content,.appointments-content,.health-records-content,.emergency-main,.caregiver-main{min-height:calc(100vh - 80px)!important}
+.medicine-section,.injection-section,.timeline-section,.records-section,.notes-section{background:transparent!important;margin-bottom:24px!important}
+/* Cards */
+.content-card,.dashboard-card,.medicine-card,.injection-card,.appointment-card,.record-card,.emergency-card,.emergency-summary-card,.caregiver-form-card,.note-card,.preparation-card,.summary-card,.quick-card,.data-status-card,.speech-card,.info-card,.care-plan-section,.dashboard-two-column>section,.quick-access-section{background:#fff!important;border:1px solid var(--ocean-border)!important;border-radius:var(--ocean-radius)!important;box-shadow:var(--ocean-shadow)!important}
+/* Buttons */
+button,.add-medicine-button,.add-injection-button,.add-appointment-btn,.add-record-btn,.add-note-btn,.save-emergency-btn,.save-medicine-button,.save-injection-button,.save-appointment-btn,.save-record-btn,.save-note-btn,.primary-button,.gemini-button{font-family:Poppins,Roboto,Arial,sans-serif!important;border-radius:11px!important}
+.add-medicine-button,.add-injection-button,.add-appointment-btn,.add-record-btn,.add-note-btn,.save-emergency-btn,.save-medicine-button,.save-injection-button,.save-appointment-btn,.save-record-btn,.save-note-btn,.primary-button,.gemini-button{background:var(--ocean-primary)!important;color:#fff!important;border-color:var(--ocean-primary)!important;box-shadow:0 6px 14px rgba(7,89,133,.18)!important}
+.add-medicine-button:hover,.add-injection-button:hover,.add-appointment-btn:hover,.add-record-btn:hover,.add-note-btn:hover,.save-emergency-btn:hover,.save-medicine-button:hover,.save-injection-button:hover,.save-appointment-btn:hover,.save-record-btn:hover,.save-note-btn:hover,.primary-button:hover,.gemini-button:hover{background:var(--ocean-primary-dark)!important}
+.secondary-button,.cancel-button,.cancel-btn,.cancel-note-btn,.clear-button{background:#fff!important;color:var(--ocean-primary-dark)!important;border:1px solid var(--ocean-border)!important}
+/* Forms */
+input,select,textarea{font-family:Poppins,Roboto,Arial,sans-serif!important;background:#fff!important;color:var(--ocean-text)!important;border:1px solid #BFD8E3!important;border-radius:10px!important}
+input:focus,select:focus,textarea:focus{border-color:var(--ocean-accent)!important;box-shadow:0 0 0 3px rgba(8,145,178,.12)!important;outline:none!important}
+label{color:var(--ocean-text)!important}
+/* Status */
+.medicine-count,.injection-count{background:var(--ocean-light)!important;color:var(--ocean-primary-dark)!important}
+.status-taken,.taken,.completed,.status.completed{background:#DDF5EC!important;color:#0B6B53!important}
+.status-pending,.pending,.upcoming{background:#FFF2D6!important;color:#8A5A08!important}
+.category-btn{background:#fff!important;color:#35566A!important;border:1px solid var(--ocean-border)!important;border-radius:10px!important}
+.category-btn.active{background:var(--ocean-primary)!important;color:#fff!important;border-color:var(--ocean-primary)!important}
+/* Modals */
+.modal-overlay,.appointment-modal,.record-modal{background:rgba(4,35,52,.52)!important}
+.medicine-modal,.injection-modal,.appointment-modal-content,.record-modal-content{background:#fff!important;border:1px solid var(--ocean-border)!important;border-radius:18px!important}
+.modal-header,.appointment-modal-header,.record-modal-header{border-bottom:1px solid var(--ocean-border)!important}
+.close-modal,.close-btn{color:var(--ocean-primary-dark)!important}
+/* Emergency/caregiver accents */
+.large-emergency-icon,.note-icon{background:var(--ocean-light)!important;color:var(--ocean-primary-dark)!important}
+.quick-actions button:last-child{background:var(--ocean-primary)!important;color:#fff!important}
+.timeline-dot,.preparation-check.checked{background:var(--ocean-light)!important;color:var(--ocean-primary-dark)!important}
+.empty-add-btn,.text-link,.view-all-button,.section-heading a{color:var(--ocean-primary-dark)!important}
+/* Speech page uses same geometry */
+.speech-page{background:var(--ocean-bg)!important;color:var(--ocean-text)!important;min-height:100vh!important}
+.speech-header{background:#fff!important;border-bottom:1px solid var(--ocean-border)!important;padding:24px 32px!important}
+.speech-container{max-width:1100px!important;margin:0 auto!important;padding:30px 32px 45px!important}
+.speech-card,.gemini-result-card,.speech-page .info-card{background:#fff!important;border:1px solid var(--ocean-border)!important;border-radius:var(--ocean-radius)!important;box-shadow:var(--ocean-shadow)!important}
+.speech-page .back-button{color:var(--ocean-primary-dark)!important;border-color:var(--ocean-border)!important;background:var(--ocean-pale)!important}
+/* Home/login pages */
+.vivora-ocean-page{background:linear-gradient(135deg,#EAF6FB 0%,#F5FAFC 55%,#DCEFF7 100%)!important;color:var(--ocean-text)!important;min-height:100vh!important}
+.vivora-ocean-card{background:#fff!important;border:1px solid var(--ocean-border)!important;border-radius:20px!important;box-shadow:0 12px 32px rgba(4,59,92,.12)!important}
+.vivora-ocean-primary{background:var(--ocean-primary)!important;color:#fff!important}
+.vivora-ocean-primary:hover{background:var(--ocean-primary-dark)!important}
+/* Mobile */
+@media(max-width:900px){
+  .sidebar{width:100%!important;min-height:auto!important;position:relative!important;bottom:auto!important;padding:14px!important}
+  .sidebar-navigation,.sidebar-bottom{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .main-content{margin-left:0!important;width:100%!important}
+  .top-header{height:auto!important;min-height:72px!important;padding:14px 20px!important}
+  .medicines-content,.injections-content,.appointments-content,.health-records-content,.emergency-main,.caregiver-main,.dashboard-content,.speech-container{padding:22px 18px 35px!important}
+}
+@media(max-width:560px){
+  .sidebar-navigation,.sidebar-bottom{grid-template-columns:1fr!important}
+}
+
+/* ===== FINAL OCEAN BLUE CALM - SLIGHTLY DARKER LIGHT THEME ===== */
+:root{
+  --ocean-primary:#075985;
+  --ocean-primary-dark:#064565;
+  --ocean-secondary:#0B6B88;
+  --ocean-accent:#0A86A8;
+  --ocean-light:#CBE8F3;
+  --ocean-pale:#E5F3F8;
+  --ocean-bg:#EEF7FA;
+  --ocean-card:#FFFFFF;
+  --ocean-text:#123B55;
+  --ocean-muted:#58788C;
+  --ocean-border:#BBD8E4;
+  --ocean-shadow:0 6px 18px rgba(6,69,101,.09);
+}
+body{background:var(--ocean-bg)!important;color:var(--ocean-text)!important}
+.sidebar{background:#F9FCFD!important;border-right-color:var(--ocean-border)!important}
+.sidebar-logo-icon{background:var(--ocean-light)!important;color:var(--ocean-primary-dark)!important}
+.sidebar-logo h1,.sidebar-logo h1 a{color:var(--ocean-primary-dark)!important}
+.sidebar-navigation .nav-item,.sidebar .nav-item{color:#31576D!important;text-decoration:none!important}
+.sidebar-navigation .nav-item:hover,.sidebar .nav-item:hover{background:var(--ocean-pale)!important;color:var(--ocean-primary-dark)!important}
+.sidebar-navigation .nav-item.active,.sidebar .nav-item.active,.sidebar .active{background:var(--ocean-primary)!important;color:#fff!important}
+.main-content{background:var(--ocean-bg)!important}
+.top-header{background:#F9FCFD!important;border-bottom-color:var(--ocean-border)!important}
+.dashboard-content,.medicines-content,.injections-content,.appointments-content,.health-records-content,.emergency-main,.caregiver-main{background:var(--ocean-bg)!important}
+.content-card,.dashboard-card,.medicine-card,.injection-card,.appointment-card,.record-card,.emergency-card,.emergency-summary-card,.caregiver-form-card,.note-card,.preparation-card,.summary-card,.quick-card,.data-status-card,.speech-card,.info-card,.care-plan-section,.dashboard-two-column>section,.quick-access-section{background:#fff!important;border-color:var(--ocean-border)!important;box-shadow:var(--ocean-shadow)!important}
+.summary-card,.summary-card:hover,.summary-card:visited,.summary-card *,.summary-card:hover *,.view-all-button,.text-link,.section-heading a,.empty-add-btn{ text-decoration:none!important }
+a,.text-link,.view-all-button,.summary-card,.data-status-card,.quick-card{ text-decoration:none!important }
+.welcome-small{color:var(--ocean-secondary)!important}
+.current-date{background:#fff!important;border-color:var(--ocean-border)!important}
+.card-icon,.profile-icon{background:var(--ocean-light)!important;color:var(--ocean-primary-dark)!important}
+.card-arrow{background:var(--ocean-pale)!important;color:var(--ocean-primary-dark)!important}
+.view-all-button,.text-link,.section-heading a{color:var(--ocean-primary)!important;font-weight:600!important}
+.category-btn.active{background:var(--ocean-primary)!important;border-color:var(--ocean-primary)!important}
+
+/* Dashboard uses the same compact page geometry as Medicines */
+.dashboard-content{max-width:1200px!important;margin:0 auto!important;padding:30px 32px 45px!important}
+.welcome-section{background:linear-gradient(135deg,#D8EDF5 0%,#EAF6FA 100%)!important;border:1px solid var(--ocean-border)!important;border-radius:16px!important;padding:24px!important;margin-bottom:22px!important}
+.welcome-section h1{color:var(--ocean-text)!important;font-size:30px!important}
+.welcome-description{color:var(--ocean-muted)!important}
+.summary-grid{gap:18px!important;margin-bottom:22px!important}
+.summary-card{min-height:118px!important;padding:20px!important;border-radius:15px!important}
+.summary-card .card-content p{color:var(--ocean-secondary)!important}
+.summary-card .card-content h3{color:var(--ocean-text)!important}
+.summary-card .card-content span{color:var(--ocean-muted)!important}
+.care-plan-section{padding:22px!important;margin-bottom:22px!important}
+.dashboard-two-column{gap:18px!important;margin-bottom:22px!important}
+.dashboard-two-column .dashboard-card{padding:22px!important}
+.quick-access-section{padding:22px!important;margin-bottom:22px!important}
+.data-status-grid{gap:18px!important}
+.emergency-section{border-color:var(--ocean-border)!important;background:#fff!important}
+
+@media(max-width:900px){
+  .dashboard-content{padding:22px 18px 35px!important}
+}

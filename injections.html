@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vivora - Injections</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="css/medicines.css" rel="stylesheet"/>
+<link href="css/injections.css" rel="stylesheet"/>
+<link href="css/vivora-unified-theme.css" rel="stylesheet"/>
+<link href="css/vivora-layout-final.css" rel="stylesheet"/></head>
+<body>
+<div class="app-container">
+<!-- Sidebar -->
+<aside class="sidebar">
+<div class="sidebar-logo">
+<div class="sidebar-logo-icon">♥</div>
+<div>
+<h1>Vivora</h1>
+<p>Smart Health Companion</p>
+</div>
+</div>
+<nav class="sidebar-navigation">
+<a class="nav-item" href="dashboard.html">
+<span class="nav-icon">🏠</span>
+<span>Home</span>
+</a>
+<a class="nav-item" href="medicines.html">
+<span class="nav-icon">💊</span>
+<span>Medicines</span>
+</a>
+<a class="nav-item active" href="injections.html">
+<span class="nav-icon">💉</span>
+<span>Injections</span>
+</a>
+<a class="nav-item" href="appointments.html">
+<span class="nav-icon">📅</span>
+<span>Appointments</span>
+</a>
+<a class="nav-item" href="health-records.html">
+<span class="nav-icon">📋</span>
+<span>Health Records</span>
+</a>
+<a class="nav-item" href="speech.html">
+<span class="nav-icon">🎙️</span>
+<span>Speech-to-Text</span>
+</a>
+<a class="nav-item emergency-nav" href="emergency.html">
+<span class="nav-icon">🚨</span>
+<span>Emergency</span>
+</a>
+<a class="nav-item" href="caregiver.html">
+<span class="nav-icon">👨‍👩‍👧</span>
+<span>Caregiver</span>
+</a>
+</nav>
+<div class="sidebar-bottom">
+<a class="nav-item" href="settings.html">
+<span class="nav-icon">⚙️</span>
+<span>Settings</span>
+</a>
+<a class="nav-item" href="index.html">
+<span class="nav-icon">↪️</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="main-content">
+<!-- Header -->
+<header class="top-header">
+<button class="mobile-menu">☰</button>
+<div class="header-title">
+<h2>Injections</h2>
+<p>Manage your injections and recurring schedules</p>
+</div>
+<div class="header-actions">
+<button class="notification-button">
+                        🔔
+                        <span class="notification-badge">3</span>
+</button>
+<button class="profile-button">
+<span class="profile-icon">👤</span>
+<span class="profile-name">User</span>
+</button>
+</div>
+</header>
+<!-- Injections Content -->
+<section class="injections-content">
+<!-- Page Introduction -->
+<section class="page-intro">
+<div>
+<p class="intro-small">💉 My Injections</p>
+<h1>Injection Schedule</h1>
+<p>Keep track of your injections and never miss a dose.</p>
+</div>
+<button class="add-injection-button" id="openInjectionForm">
+                        ＋ Add Injection
+                    </button>
+</section>
+<!-- Upcoming Injections -->
+<section class="injection-section">
+<div class="section-heading">
+<div>
+<h2>Upcoming Injections</h2>
+<p>Injections scheduled for your upcoming dates</p>
+</div>
+<span class="injection-count" id="injectionCount">
+                            0 Injections
+                        </span>
+</div>
+<div class="injection-list" id="injectionList"></div>
+</section>
+<!-- All Injections -->
+<section class="injection-section">
+<div class="section-heading">
+<div>
+<h2>All Injections</h2>
+<p>All injections you have added</p>
+</div>
+</div>
+<div class="all-injection-list" id="allInjectionList"></div>
+</section>
+</section>
+</main>
+</div>
+<!-- Add Injection Modal -->
+<div class="modal-overlay" id="injectionModal">
+<div class="injection-modal">
+<div class="modal-header">
+<div>
+<h2 id="injectionModalTitle">Add New Injection</h2>
+<p>Enter the injection details below</p>
+</div>
+<button class="close-modal" id="closeInjectionForm">×</button>
+</div>
+<form id="injectionForm">
+<!-- Injection Photo -->
+<div class="photo-upload-section">
+<div class="photo-preview" id="injectionPhotoPreview">
+<span>💉</span>
+<p>Injection Photo</p>
+</div>
+<label class="upload-button" for="injectionPhoto">
+                        ＋ Add Photo
+                    </label>
+<input accept="image/*" hidden="" id="injectionPhoto" type="file"/>
+<small>Add a clear photo of the injection or package.</small>
+</div>
+<!-- Form Fields -->
+<div class="form-grid">
+<div class="form-group">
+<label for="injectionName">Injection Name</label>
+<input id="injectionName" placeholder="Example: Vitamin B12" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="injectionDose">Dosage</label>
+<input id="injectionDose" placeholder="Example: 1 ml" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="injectionDate">Next Injection Date</label>
+<input id="injectionDate" required="" type="date"/>
+</div>
+<div class="form-group">
+<label for="injectionTime">Time</label>
+<input id="injectionTime" required="" type="time"/>
+</div>
+<div class="form-group">
+<label for="injectionFrequency">Frequency</label>
+<select id="injectionFrequency" required="">
+<option value="">Select frequency</option>
+<option value="Once">Once</option>
+<option value="Every month">Every month</option>
+<option value="Every 2 months">Every 2 months</option>
+<option value="Every 3 months">Every 3 months</option>
+<option value="Every 6 months">Every 6 months</option>
+<option value="Every year">Every year</option>
+</select>
+</div>
+<div class="form-group">
+<label for="injectionDoctor">Doctor Name</label>
+<input id="injectionDoctor" placeholder="Example: Dr. Kumar" type="text"/>
+</div>
+<div class="form-group">
+<label for="injectionLocation">Injection Location</label>
+<input id="injectionLocation" placeholder="Example: Hospital" type="text"/>
+</div>
+</div>
+<!-- Notes -->
+<div class="form-group">
+<label for="injectionNotes">Notes</label>
+<textarea id="injectionNotes" placeholder="Example: Take as prescribed by doctor"></textarea>
+</div>
+<!-- Buttons -->
+<div class="modal-actions">
+<button class="cancel-button" id="cancelInjectionForm" type="button">
+                        Cancel
+                    </button>
+<button class="save-injection-button" type="submit">
+                        ✓ Save Injection
+                    </button>
+</div>
+</form>
+</div>
+</div>
+<script src="js/app.js?v=20260920" type="module"></script>
+</body>
+</html>

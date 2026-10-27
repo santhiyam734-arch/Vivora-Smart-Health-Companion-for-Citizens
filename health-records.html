@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vivora - Health Records</title>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/health-records.css" rel="stylesheet"/>
+<link href="css/vivora-unified-theme.css" rel="stylesheet"/>
+<link href="css/vivora-layout-final.css" rel="stylesheet"/></head>
+<body>
+<div class="app-container">
+<aside class="sidebar">
+<div class="sidebar-logo">
+<div class="sidebar-logo-icon">♥</div>
+<div>
+<h1>Vivora</h1>
+<p>Smart Health Companion</p>
+</div>
+</div>
+<nav class="sidebar-navigation">
+<a class="nav-item" href="dashboard.html">
+<span class="nav-icon">🏠</span>
+<span>Home</span>
+</a>
+<a class="nav-item" href="medicines.html">
+<span class="nav-icon">💊</span>
+<span>Medicines</span>
+</a>
+<a class="nav-item" href="injections.html">
+<span class="nav-icon">💉</span>
+<span>Injections</span>
+</a>
+<a class="nav-item" href="appointments.html">
+<span class="nav-icon">📅</span>
+<span>Appointments</span>
+</a>
+<a class="nav-item active" href="health-records.html">
+<span class="nav-icon">📋</span>
+<span>Health Records</span>
+</a>
+<a class="nav-item" href="speech.html">
+<span class="nav-icon">🎙️</span>
+<span>Speech-to-Text</span>
+</a>
+<a class="nav-item emergency-nav" href="emergency.html">
+<span class="nav-icon">🚨</span>
+<span>Emergency</span>
+</a>
+<a class="nav-item" href="caregiver.html">
+<span class="nav-icon">👨‍👩‍👧</span>
+<span>Caregiver</span>
+</a>
+</nav>
+<div class="sidebar-bottom">
+<a class="nav-item" href="settings.html">
+<span class="nav-icon">⚙️</span>
+<span>Settings</span>
+</a>
+<a class="nav-item" href="index.html">
+<span class="nav-icon">↪️</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<main class="main-content"><header class="top-header"><button class="mobile-menu" type="button">☰</button><div class="header-title"><h2>Health Records</h2><p>Keep your important health information in one safe place.</p></div><div class="header-actions"><button aria-label="Notifications" class="notification-button" type="button">🔔<span class="notification-badge">3</span></button><button class="profile-button" type="button"><span class="profile-icon">👤</span><span class="profile-name">User</span></button></div></header>
+<div class="records-page-content">
+<section class="records-header">
+<div>
+<h1>Health Records</h1>
+<p>Keep your important health information in one safe place.</p>
+</div>
+<button class="add-record-btn" id="openRecordForm">➕ Add Record</button>
+</section>
+<section class="record-summary">
+<div class="summary-card">
+<div class="summary-icon">🧪</div>
+<div>
+<h3 id="labCount">0</h3>
+<p>Lab Reports</p>
+</div>
+</div>
+<div class="summary-card">
+<div class="summary-icon">💊</div>
+<div>
+<h3 id="prescriptionCount">0</h3>
+<p>Prescriptions</p>
+</div>
+</div>
+<div class="summary-card">
+<div class="summary-icon">🩻</div>
+<div>
+<h3 id="scanCount">0</h3>
+<p>Scan Reports</p>
+</div>
+</div>
+<div class="summary-card">
+<div class="summary-icon">📝</div>
+<div>
+<h3 id="notesCount">0</h3>
+<p>Medical Notes</p>
+</div>
+</div>
+</section>
+<section class="record-categories">
+<button class="category-btn active" data-category="all">All</button>
+<button class="category-btn" data-category="lab">🧪 Lab Reports</button>
+<button class="category-btn" data-category="prescription">💊 Prescriptions</button>
+<button class="category-btn" data-category="scan">🩻 Scan Reports</button>
+<button class="category-btn" data-category="notes">📝 Medical Notes</button>
+</section>
+<section class="records-section">
+<div class="section-title">
+<h2 id="recordsSectionTitle">All Records</h2>
+<p>Your saved health records will appear here.</p>
+</div>
+<div id="recordsContainer">
+<div class="empty-records">
+<div class="empty-records-icon">📋</div>
+<h3>No health records yet</h3>
+<p>Add your first health record to keep it safely in Vivora.</p>
+<button class="empty-add-btn" id="emptyAddRecord">➕ Add Record</button>
+</div>
+</div>
+</section>
+</div>
+
+</main>
+</div>
+<div class="record-modal" id="recordModal">
+<div class="record-modal-content">
+<div class="record-modal-header">
+<h2 id="recordModalTitle">Add New Record</h2>
+<button class="close-btn" id="closeRecordForm">✕</button>
+</div>
+<form id="recordForm">
+<div class="form-group">
+<label for="recordName">Record Name</label>
+<input id="recordName" placeholder="Example: Blood Test Report" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="recordType">Record Type</label>
+<select id="recordType" required="">
+<option value="">Select record type</option>
+<option value="lab">🧪 Lab Report</option>
+<option value="prescription">💊 Prescription</option>
+<option value="scan">🩻 Scan Report</option>
+<option value="notes">📝 Medical Note</option>
+</select>
+</div>
+<div class="form-group">
+<label for="recordDate">Date</label>
+<input id="recordDate" required="" type="date"/>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="recordDoctor">Doctor</label>
+<input id="recordDoctor" placeholder="Doctor name" type="text"/>
+</div>
+<div class="form-group">
+<label for="recordHospital">Hospital</label>
+<input id="recordHospital" placeholder="Hospital name" type="text"/>
+</div>
+</div>
+<div class="form-group">
+<label for="recordDescription">Description</label>
+<textarea id="recordDescription" placeholder="Add a short description" rows="4"></textarea>
+</div>
+<div class="form-group">
+<label for="recordFile">Upload Record</label>
+<input accept=".pdf,.jpg,.jpeg,.png" id="recordFile" type="file"/>
+<small>PDF, JPG, JPEG or PNG</small>
+</div>
+<div class="modal-actions">
+<button class="cancel-btn" id="cancelRecordForm" type="button">Cancel</button>
+<button class="save-record-btn" type="submit">💾 Save Record</button>
+</div>
+</form>
+</div>
+</div>
+<script src="js/app.js?v=20260920" type="module"></script>
+</body>
+</html>

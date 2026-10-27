@@ -1,0 +1,157 @@
+/* =========================================================
+   VIVORA — BLUSH CALM UNIFIED THEME
+   One visual system for every module.
+   ========================================================= */
+:root{
+  --v-primary:#C96F78;
+  --v-primary-dark:#A84F59;
+  --v-primary-soft:#F6C8C5;
+  --v-primary-pale:#FCE9E7;
+  --v-bg:#FFF7F6;
+  --v-surface:#FFFFFF;
+  --v-surface-soft:#FFF1F0;
+  --v-border:#F1C8C6;
+  --v-text:#4B2A2D;
+  --v-heading:#5A2F34;
+  --v-muted:#85676A;
+  --v-shadow:0 6px 22px rgba(168,79,89,.08);
+  --v-radius:16px;
+  --v-sidebar:260px;
+  --v-header:82px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;min-height:100%;font-family:'Poppins','Roboto',Arial,sans-serif;color:var(--v-text);background:var(--v-bg)}
+body{font-size:16px;line-height:1.5}
+button,input,select,textarea{font:inherit}
+a{color:inherit}
+
+/* ===== COMMON APPLICATION SHELL ===== */
+.app-container{display:flex;min-height:100vh;background:var(--v-bg)}
+.sidebar{width:var(--v-sidebar)!important;min-width:var(--v-sidebar);background:var(--v-surface)!important;border-right:1px solid var(--v-border)!important;padding:24px 16px!important;box-shadow:2px 0 14px rgba(168,79,89,.04);z-index:20}
+.sidebar-logo,.logo{display:flex!important;align-items:center;gap:12px;padding:4px 10px 28px!important}
+.sidebar-logo-icon,.logo>span{width:50px;height:50px;display:flex;align-items:center;justify-content:center;border-radius:14px!important;background:var(--v-primary-soft)!important;color:var(--v-primary-dark)!important;font-size:24px!important;flex-shrink:0}
+.sidebar-logo h1,.logo h2{font-family:'Poppins',sans-serif!important;font-size:24px!important;line-height:1.1;color:var(--v-heading)!important;margin:0!important}
+.sidebar-logo p{font-size:12px!important;color:var(--v-muted)!important;margin:3px 0 0!important}
+.sidebar nav,.sidebar-navigation{display:flex;flex-direction:column;gap:6px}
+.nav-item,.sidebar nav a{display:flex;align-items:center;gap:12px;padding:12px 13px!important;border-radius:11px!important;text-decoration:none!important;color:var(--v-text)!important;font-size:15.5px!important;font-weight:500!important;transition:.2s}
+.nav-item:hover,.sidebar nav a:hover{background:var(--v-primary-pale)!important;color:var(--v-primary-dark)!important}
+.nav-item.active,.sidebar nav a.active{background:var(--v-primary)!important;color:#fff!important;font-weight:600!important;box-shadow:0 5px 14px rgba(201,111,120,.18)}
+.nav-icon{width:24px;text-align:center;font-size:19px}
+.sidebar-bottom{margin-top:auto!important;border-top:1px solid var(--v-border)!important;padding-top:14px!important}
+.main-content{width:calc(100% - var(--v-sidebar))!important;margin-left:var(--v-sidebar)!important;min-height:100vh!important;background:var(--v-bg)}
+.top-header{height:var(--v-header)!important;background:var(--v-surface)!important;border-bottom:1px solid var(--v-border)!important;padding:0 34px!important}
+.header-title h2{font-family:'Poppins',sans-serif!important;font-size:24px!important;color:var(--v-heading)!important;margin:0}
+.header-title p{font-size:14px!important;color:var(--v-muted)!important;margin:2px 0 0}
+.header-actions{gap:16px!important}
+.notification-button,.profile-button,.mobile-menu{color:var(--v-heading)!important}
+.profile-icon{background:var(--v-primary-pale)!important;color:var(--v-primary-dark)!important}
+.notification-badge{background:var(--v-primary-dark)!important}
+
+/* ===== SHARED PAGE WIDTH + TYPOGRAPHY ===== */
+.medicines-content,.injections-content,.records-header,.record-summary,.record-categories,.records-section,.appointment-header,.next-visit-section,.preparation-section,.timeline-section,.caregiver-main,.emergency-main,.dashboard-content{max-width:1180px;margin-left:auto!important;margin-right:auto!important}
+.medicines-content,.injections-content,.caregiver-main,.emergency-main,.dashboard-content{padding:30px 36px 48px!important}
+.page-intro,.appointment-header,.page-header,.records-header{margin-bottom:28px!important}
+.page-intro h1,.appointment-header h1,.page-header h1,.records-header h1{font-family:'Poppins',sans-serif!important;font-size:30px!important;line-height:1.2!important;color:var(--v-heading)!important;margin:0!important}
+.page-intro p,.appointment-header p,.page-header p,.records-header p{font-size:15.5px!important;color:var(--v-muted)!important;margin-top:6px!important}
+.intro-small,.welcome-small{color:var(--v-primary-dark)!important;font-size:15px!important;font-weight:600!important}
+.add-medicine-button,.add-injection-button,.add-appointment-btn,.add-note-btn,.add-record-btn,.save-medicine-button,.save-injection-button,.save-appointment-btn,.save-note-btn,.save-record-btn,.save-emergency-btn{background:var(--v-primary)!important;color:#fff!important;border:none!important;border-radius:10px!important;font-size:15px!important;font-weight:600!important;padding:12px 18px!important;box-shadow:none!important}
+.add-medicine-button:hover,.add-injection-button:hover,.add-appointment-btn:hover,.add-note-btn:hover,.add-record-btn:hover{background:var(--v-primary-dark)!important}
+
+/* ===== CONSISTENT CARDS ===== */
+.medicine-card,.upcoming-card,.injection-card,.appointment-card,.preparation-card,.caregiver-form-card,.note-card,.emergency-card,.emergency-summary-card,.summary-card,.dashboard-card,.record-card,.empty-records,.speech-card,.info-card,.gemini-result-card{background:var(--v-surface)!important;border:1px solid var(--v-border)!important;border-radius:var(--v-radius)!important;box-shadow:var(--v-shadow)!important}
+.section-heading h2,.section-title h2,.card-title h2,.summary-header h2{font-family:'Poppins',sans-serif!important;color:var(--v-heading)!important;font-size:21px!important}
+.section-heading p,.section-title p{font-size:14px!important;color:var(--v-muted)!important}
+
+/* ===== MEDICINES + INJECTIONS — REFERENCE LAYOUT ===== */
+.medicine-list,.all-medicine-list,.injection-list,.all-injection-list{display:flex!important;flex-direction:column!important;gap:14px!important}
+.medicine-card,.injection-card{min-height:145px!important;padding:18px 20px!important;gap:20px!important}
+.medicine-image,.upcoming-icon,.injection-icon{background:var(--v-primary-pale)!important;border-radius:13px!important}
+.medicine-info h3,.upcoming-card h3,.injection-info h3{font-size:20px!important;color:var(--v-heading)!important}
+.dosage,.medicine-time,.injection-info p,.upcoming-card p{font-size:15px!important;color:var(--v-muted)!important}
+.medicine-status,.injection-status,.status-badge{background:var(--v-primary-pale)!important;color:var(--v-primary-dark)!important;border:none!important;border-radius:8px!important;font-size:13px!important;padding:6px 11px!important}
+.medicine-status.taken{background:var(--v-primary-soft)!important;color:var(--v-primary-dark)!important}
+
+/* ===== DASHBOARD: SAME RHYTHM AS MEDICINES ===== */
+.dashboard-content{padding-top:30px!important}
+.welcome-section{background:linear-gradient(110deg,var(--v-primary-pale),#fff 70%)!important;border:1px solid var(--v-border)!important;border-radius:var(--v-radius)!important;padding:24px 26px!important;margin-bottom:22px!important;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.welcome-section h1{font-size:30px!important;color:var(--v-heading)!important;margin:2px 0 5px!important}
+.welcome-description{font-size:15px!important;color:var(--v-muted)!important}
+.current-date{background:#fff!important;border:1px solid var(--v-border)!important;border-radius:14px!important;padding:14px 18px!important;min-width:250px}
+.current-date strong{font-size:14px!important;color:var(--v-heading)!important}
+.summary-grid{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:16px!important;margin-bottom:25px!important}
+.summary-grid .summary-card{padding:18px!important;min-height:125px!important;display:flex;align-items:center;gap:15px}
+.summary-grid .summary-card h3{font-size:20px!important;color:var(--v-heading)!important;margin:0}
+.summary-grid .summary-card p{font-size:14px!important;color:var(--v-muted)!important}
+.card-icon{background:var(--v-primary-pale)!important;color:var(--v-primary-dark)!important;border-radius:13px!important}
+.dashboard-card{padding:22px!important;margin-bottom:20px!important}
+.care-plan-section{margin-bottom:20px!important}
+.timeline{display:flex;flex-direction:column;gap:12px!important}
+.timeline-item{background:var(--v-surface-soft)!important;border:1px solid var(--v-border)!important;border-radius:13px!important;padding:16px!important}
+.dashboard-two-column{display:grid!important;grid-template-columns:1fr 1fr!important;gap:18px!important}
+.quick-access-section,.data-status-grid,.emergency-section{margin-top:0!important}
+.dashboard-card a,.summary-card a,.section-heading a,.care-plan-section a{color:var(--v-primary-dark)!important;text-decoration:none!important}
+.dashboard-card a:hover,.summary-card a:hover,.section-heading a:hover{color:var(--v-primary)!important;text-decoration:none!important}
+
+/* ===== HEALTH RECORDS ===== */
+.record-summary{display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:14px!important;margin-bottom:20px!important}
+.record-summary .summary-card{padding:18px!important;min-height:105px!important}
+.record-categories{display:flex!important;gap:9px!important;flex-wrap:wrap!important;margin-bottom:22px!important}
+.category-btn{border:1px solid var(--v-border)!important;background:#fff!important;color:var(--v-text)!important;border-radius:9px!important;padding:9px 13px!important;font-size:14px!important}
+.category-btn.active,.category-btn:hover{background:var(--v-primary)!important;color:#fff!important;border-color:var(--v-primary)!important}
+
+/* ===== APPOINTMENTS ===== */
+.next-visit-section,.preparation-section,.timeline-section{margin-bottom:24px!important}
+.next-visit-section,.preparation-section,.timeline-section{padding:20px!important;background:transparent!important}
+.appointment-timeline{display:flex;flex-direction:column;gap:13px}
+
+/* ===== CAREGIVER + EMERGENCY ===== */
+.caregiver-form-card,.notes-section,.emergency-layout{margin-bottom:22px!important}
+.caregiver-form-card{padding:22px!important}
+.form-group label{font-size:14px!important;font-weight:600!important;color:var(--v-heading)!important}
+.form-group input,.form-group select,.form-group textarea,input,select,textarea{border:1px solid var(--v-border)!important;border-radius:9px!important;background:#fff!important;color:var(--v-text)!important;padding:11px 12px!important;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--v-primary)!important;box-shadow:0 0 0 3px var(--v-primary-pale)!important}
+
+/* ===== MODALS ===== */
+.modal-overlay,.record-modal,.appointment-modal{background:rgba(75,42,45,.28)!important}
+.medicine-modal,.injection-modal,.appointment-modal-content,.record-modal-content{background:#fff!important;border:1px solid var(--v-border)!important;border-radius:18px!important;box-shadow:0 18px 50px rgba(75,42,45,.16)!important}
+.close-modal,.close-btn,.close-button,.close-injection{background:var(--v-primary-pale)!important;color:var(--v-primary-dark)!important;border:none!important}
+
+/* ===== SPEECH PAGE — SAME APP SHELL VISUAL LANGUAGE ===== */
+.speech-page{min-height:100vh;background:var(--v-bg)!important;padding:0!important}
+.speech-header{height:var(--v-header)!important;background:#fff!important;border-bottom:1px solid var(--v-border)!important;padding:0 36px!important;display:flex!important;align-items:center!important;justify-content:space-between!important}
+.speech-header h1{font-size:24px!important;color:var(--v-heading)!important;margin:0!important}
+.speech-header p{font-size:14px!important;color:var(--v-muted)!important}
+.speech-container{max-width:1180px!important;margin:0 auto!important;padding:30px 36px 48px!important}
+.speech-card,.info-card{padding:24px!important;margin-bottom:20px!important}
+.primary-button,.gemini-button{background:var(--v-primary)!important;color:#fff!important;border:none!important;border-radius:9px!important}
+.secondary-button,.clear-button,.back-button{background:var(--v-primary-pale)!important;color:var(--v-primary-dark)!important;border:1px solid var(--v-border)!important;border-radius:9px!important;text-decoration:none!important}
+.gemini-result-card{margin-top:20px!important;padding:20px!important}
+
+/* ===== REMOVE UNDERLINES FROM ALL NORMAL UI TEXT ===== */
+.app-container a,.speech-page a{text-decoration:none!important}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1000px){
+  :root{--v-sidebar:230px}
+  .sidebar{width:230px!important;min-width:230px}
+  .main-content{width:calc(100% - 230px)!important;margin-left:230px!important}
+  .summary-grid{grid-template-columns:1fr!important}
+  .record-summary{grid-template-columns:repeat(2,1fr)!important}
+}
+@media(max-width:750px){
+  :root{--v-sidebar:0px}
+  .sidebar{display:none!important}
+  .main-content{width:100%!important;margin-left:0!important}
+  .top-header{height:76px!important;padding:0 18px!important}
+  .mobile-menu{display:block!important}
+  .medicines-content,.injections-content,.caregiver-main,.emergency-main,.dashboard-content,.speech-container{padding:22px 18px 38px!important}
+  .page-intro,.appointment-header,.page-header,.records-header,.welcome-section{flex-direction:column!important;align-items:flex-start!important}
+  .welcome-section{padding:20px!important}
+  .current-date{width:100%;min-width:0}
+  .dashboard-two-column{grid-template-columns:1fr!important}
+  .record-summary{grid-template-columns:1fr!important}
+  .medicine-card,.injection-card{align-items:flex-start!important}
+  .medicine-image{width:95px!important;height:95px!important}
+  .speech-header{height:auto!important;padding:18px!important;gap:15px;align-items:flex-start!important;flex-direction:column}
+}

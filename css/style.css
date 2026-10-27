@@ -1,0 +1,295 @@
+/* ========================================
+   VIVORA - SMART HEALTH COMPANION
+   LAVENDER CARE THEME
+   ======================================== */
+
+
+/* ---------- Basic Page Setup ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #E8D9FA;
+    color: #1E1B4B;
+}
+
+/* ---------- Welcome Page ---------- */
+
+.welcome-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* ---------- Logo ---------- */
+
+.logo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+/* Logo Circle */
+
+.logo-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    background-color: #E9D5FF;
+    color: #7C3AED;
+    border-radius: 50%;
+    font-size: 40px;
+}
+
+/* Vivora Name */
+
+.logo h1 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: #7C3AED;
+    letter-spacing: 0.5px;
+}
+
+/* Subtitle */
+
+.logo p {
+    margin: 8px 0 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #64748B;
+}
+
+/* ---------- Welcome Content ---------- */
+
+.welcome-content {
+    width: 100%;
+    max-width: 680px;
+    text-align: center;
+    background-color: #FFFFFF;
+    padding: 45px 35px;
+    border-radius: 20px;
+    border: 1px solid #E9D5FF;
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.08);
+}
+
+/* Main Heading */
+
+.welcome-content h2 {
+    margin: 0 0 18px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #1E1B4B;
+}
+
+/* Description */
+
+.welcome-content p {
+    max-width: 560px;
+    margin: 0 auto 32px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #64748B;
+}
+
+/* ---------- Get Started Button ---------- */
+
+.start-button {
+    border: none;
+    background-color: #7C3AED;
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 17px 32px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Arrow */
+
+.start-button span {
+    margin-left: 10px;
+    font-size: 22px;
+}
+
+/* Button Hover */
+
+.start-button:hover {
+    background-color: #6D28D9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(124, 58, 237, 0.20);
+}
+
+/* Button Focus */
+
+.start-button:focus {
+    outline: 3px solid #A78BFA;
+    outline-offset: 3px;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    margin-top: 35px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #64748B;
+}
+
+/* ========================================
+   MOBILE RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 600px) {
+
+    .welcome-page {
+        padding: 30px 16px;
+    }
+
+    /* Logo */
+
+    .logo {
+        margin-bottom: 25px;
+    }
+
+    .logo-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 34px;
+    }
+
+    .logo h1 {
+        font-size: 38px;
+    }
+
+    .logo p {
+        font-size: 17px;
+    }
+
+    /* Welcome Card */
+
+    .welcome-content {
+        padding: 35px 22px;
+        border-radius: 18px;
+    }
+
+    .welcome-content h2 {
+        font-size: 26px;
+        line-height: 1.4;
+    }
+
+    .welcome-content p {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    /* Button */
+
+    .start-button {
+        width: 100%;
+        padding: 17px 20px;
+        font-size: 18px;
+    }
+
+    /* Footer */
+
+    footer {
+        margin-top: 25px;
+    }
+
+    footer p {
+        font-size: 16px;
+    }
+}
+/* ==================== SIDEBAR ==================== */
+.app-container{
+    display:flex;
+    min-height:100vh;
+}
+.sidebar{
+    width:310px;
+    min-height:100vh;
+    background:#fff;
+    border-right:1px solid #ddd1f5;
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    padding:20px 18px;
+    box-sizing:border-box;
+    z-index:100;
+}
+.sidebar .logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    text-align:left;
+    margin:0 0 35px;
+    padding:0 12px;
+}
+.sidebar .logo span{
+    width:58px;
+    height:58px;
+    background:#ead8ff;
+    color:#7c3aed;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+}
+.sidebar .logo h2{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    font-size:28px;
+    color:#7c3aed;
+}
+.sidebar nav{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+.sidebar nav a{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    text-decoration:none;
+    color:#334155;
+    font-size:18px;
+    font-weight:500;
+    padding:14px 18px;
+    border-radius:14px;
+}
+.sidebar nav a:hover{
+    background:#f3eaff;
+    color:#7c3aed;
+}
+.sidebar nav a.active{
+    background:#e8d2ff;
+    color:#7c3aed;
+    font-weight:600;
+}
+.main-content{
+    margin-left:310px;
+    width:calc(100% - 310px);
+    min-height:100vh;
+}

@@ -1,0 +1,500 @@
+/* ==========================================
+   VIVORA - SPEECH TO TEXT
+   Consistent with the Medicine module
+   ========================================== */
+
+.speech-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px 24px 40px;
+    box-sizing: border-box;
+}
+
+.speech-card,
+.info-card {
+    width: 100%;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #F0C9C7;
+    border-radius: 18px;
+    padding: 24px;
+    margin-bottom: 22px;
+    box-shadow: 0 6px 20px rgba(169, 79, 89, 0.05);
+}
+
+/* Speech status */
+
+.status-row {
+    margin-bottom: 14px;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: #FDEBE9;
+    color: #A94F59;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Transcript area */
+
+.transcript {
+    display: block;
+    width: 100%;
+    min-height: 260px;
+    padding: 22px;
+    box-sizing: border-box;
+    border: 1px solid #F0C9C7;
+    border-radius: 14px;
+    background: #FFFAFA;
+    color: #543437;
+    font-size: 18px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    overflow-y: auto;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.transcript:focus,
+.transcript:hover {
+    border-color: #D99096;
+    box-shadow: 0 3px 12px rgba(169, 79, 89, 0.06);
+}
+
+/* Speech action buttons */
+
+.speech-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.speech-actions button,
+.confirmation-actions button {
+    min-height: 48px;
+    padding: 13px 21px;
+    border: 1px solid transparent;
+    border-radius: 11px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+/* Start Speaking */
+
+.primary-button {
+    background: linear-gradient(135deg, #D47D85, #BD606B) !important;
+    color: #FFFFFF !important;
+    border-color: #C96F78 !important;
+    box-shadow: 0 4px 10px rgba(169, 79, 89, 0.15);
+}
+
+/* Stop */
+
+.secondary-button {
+    background: #FFF3F2 !important;
+    color: #B66A72 !important;
+    border-color: #F0D2D0 !important;
+}
+
+/* Clear */
+
+.clear-button {
+    background: #FFFFFF !important;
+    color: #A94F59 !important;
+    border-color: #E9B8B8 !important;
+}
+
+/* Ask Gemini */
+
+.gemini-button {
+    background: linear-gradient(135deg, #C96F78, #A94F59) !important;
+    color: #FFFFFF !important;
+    border-color: #B85E68 !important;
+    box-shadow: 0 4px 12px rgba(169, 79, 89, 0.17);
+}
+
+/* Button hover effects */
+
+.speech-actions button:not(:disabled):hover,
+.confirmation-actions button:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 15px rgba(169, 79, 89, 0.15);
+}
+
+.primary-button:not(:disabled):hover,
+.gemini-button:not(:disabled):hover {
+    background: linear-gradient(135deg, #BD626D, #963F4C) !important;
+}
+
+.secondary-button:not(:disabled):hover,
+.clear-button:not(:disabled):hover {
+    background: #FDEBE9 !important;
+    border-color: #D99096 !important;
+}
+
+.speech-actions button:disabled,
+.confirmation-actions button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Speech status message */
+
+.message {
+    margin-top: 14px;
+    color: #76565A;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   GEMINI ANALYSIS
+   ========================================== */
+
+.gemini-result-card {
+    margin-top: 26px;
+    padding: 24px;
+    border: 1px solid #F0C9C7;
+    border-radius: 17px;
+    background: linear-gradient(145deg, #FFFFFF, #FFFAFA);
+    box-shadow: 0 6px 20px rgba(169, 79, 89, 0.05);
+    box-sizing: border-box;
+}
+
+.gemini-result-card > h2 {
+    margin: 0 0 15px;
+    color: #5A3035;
+    font-family: 'Poppins', sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.gemini-status {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 9px 14px;
+    border: 1px solid #F5D1CF;
+    border-radius: 10px;
+    background: #FDEBE9;
+    color: #A94F59;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Gemini response */
+
+.gemini-response {
+    width: 100%;
+    min-height: 100px;
+    padding: 19px;
+    box-sizing: border-box;
+    border: 1px solid #F0D2D0;
+    border-radius: 13px;
+    background: #FFFFFF;
+    color: #543437;
+    font-size: 16px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    box-shadow: inset 4px 0 0 #E8A8AA;
+}
+
+/* ==========================================
+   IDENTIFIED INFORMATION CARDS
+   ========================================== */
+
+.speech-analysis-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.analysis-item {
+    min-width: 0;
+    padding: 19px;
+    border: 1px solid #F0D5D3;
+    border-radius: 14px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(169, 79, 89, 0.04);
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.analysis-item:hover {
+    transform: translateY(-2px);
+    border-color: #E6A9AC;
+    box-shadow: 0 8px 18px rgba(169, 79, 89, 0.08);
+}
+
+.analysis-item h3 {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 11px;
+    color: #A94F59;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.analysis-item h3::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #C96F78;
+}
+
+.analysis-item p {
+    margin: 0;
+    color: #543437;
+    font-size: 15px;
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+    white-space: pre-line;
+}
+
+/* Extracted information */
+
+.analysis-data {
+    grid-column: 1 / -1;
+    background: #FFFAFA;
+}
+
+.analysis-data p {
+    padding: 15px;
+    border-radius: 10px;
+    background: #FDEBE9;
+    color: #663D42;
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   CONFIRMATION PANEL
+   ========================================== */
+
+.confirmation-panel {
+    margin-top: 20px;
+    padding: 22px;
+    border: 1px solid #EDC0BE;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #FFF0EF, #FFF8F7);
+}
+
+.confirmation-panel h3 {
+    margin: 0 0 10px;
+    color: #5A3035;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.confirmation-panel > p {
+    margin: 0;
+    color: #76565A;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.confirmation-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+/* Confirm and Save */
+
+#confirmAnalysis {
+    background: linear-gradient(135deg, #D47D85, #BD606B);
+    color: #FFFFFF;
+    border-color: #C96F78;
+    box-shadow: 0 4px 10px rgba(169, 79, 89, 0.15);
+}
+
+#confirmAnalysis:not(:disabled):hover {
+    background: linear-gradient(135deg, #BD626D, #963F4C);
+}
+
+/* Cancel */
+
+#cancelAnalysis {
+    background: #FFFFFF;
+    color: #A94F59;
+    border-color: #E9B8B8;
+}
+
+#cancelAnalysis:not(:disabled):hover {
+    background: #FDEBE9;
+}
+
+/* Save result */
+
+.save-result {
+    margin-top: 15px;
+    color: #A94F59;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.open-module-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 14px;
+    padding: 12px 18px;
+    border-radius: 11px;
+    background: #C96F78;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(169, 79, 89, 0.15);
+}
+
+.open-module-button:hover {
+    background: #A94F59;
+}
+
+.confirmation-panel[hidden],
+#openModule[hidden] {
+    display: none !important;
+}
+
+/* ==========================================
+   HOW IT WORKS CARD
+   ========================================== */
+
+.info-card h2 {
+    margin-bottom: 12px;
+    color: #5A3035;
+    font-family: 'Poppins', sans-serif;
+    font-size: 21px;
+}
+
+.info-card p {
+    color: #76565A;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.info-card .note {
+    margin-top: 12px;
+    padding: 13px 15px;
+    border-radius: 10px;
+    background: #FDEBE9;
+    color: #A94F59;
+    font-weight: 600;
+}
+
+/* Keyboard accessibility */
+
+.speech-actions button:focus-visible,
+.confirmation-actions button:focus-visible,
+.open-module-button:focus-visible {
+    outline: 3px solid rgba(201, 111, 120, 0.35);
+    outline-offset: 3px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 900px) {
+    .speech-container {
+        padding: 22px 18px 32px;
+    }
+
+    .speech-card,
+    .info-card {
+        padding: 20px;
+    }
+
+    .gemini-result-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 650px) {
+    .speech-container {
+        padding: 16px 12px 25px;
+    }
+
+    .speech-card,
+    .info-card {
+        padding: 15px;
+        border-radius: 14px;
+    }
+
+    .transcript {
+        min-height: 240px;
+        padding: 16px;
+        font-size: 17px;
+    }
+
+    .speech-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .speech-actions button {
+        width: 100%;
+    }
+
+    .gemini-result-card {
+        padding: 16px;
+    }
+
+    .speech-analysis-details {
+        grid-template-columns: 1fr;
+    }
+
+    .analysis-data {
+        grid-column: auto;
+    }
+
+    .analysis-item {
+        padding: 16px;
+    }
+
+    .confirmation-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .confirmation-actions button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .analysis-item,
+    .speech-actions button,
+    .confirmation-actions button {
+        transition: none;
+    }
+}
